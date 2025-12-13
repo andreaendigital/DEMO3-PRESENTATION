@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "demo3-presentation"
+version = "1.0.0"
+description = "Demo3 Presentation Documentation Site"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Andrea", email = "andrea@example.com"}
+]
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+docs = [
+    "mkdocs-material>=9.5.0",
+    "mkdocs-git-revision-date-localized-plugin>=1.2.0",
+    "pymdown-extensions>=10.7.0",
+]
+dev = [
+    "demo3-presentation[docs]",
+]
+
+[project.urls]
+Homepage = "https://github.com/andreaendigital/DEMO3-PRESENTATION"
+Documentation = "https://andreaendigital.github.io/DEMO3-PRESENTATION/"
+Repository = "https://github.com/andreaendigital/DEMO3-PRESENTATION.git"
