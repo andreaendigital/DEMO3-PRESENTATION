@@ -3,7 +3,7 @@ site_description: Professional Presentation Documentation
 site_author: Andrea
 site_url: https://andreaendigital.github.io/DEMO3-PRESENTATION/
 
-docs_dir: docs
+docs_dir: ../docs
 
 repo_name: andreaendigital/DEMO3-PRESENTATION
 repo_url: https://github.com/andreaendigital/DEMO3-PRESENTATION
