@@ -6,7 +6,6 @@ build-backend = "setuptools.build_meta"
 name = "demo3-presentation"
 version = "1.0.0"
 description = "Demo3 Presentation Documentation Site"
-readme = "README.md"
 license = {text = "MIT"}
 authors = [
     {name = "Andrea", email = "andrea@example.com"}

@@ -3,13 +3,13 @@
 ![Status](https://img.shields.io/badge/status-active-success.svg)
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 
-## ÌæØ Bienvenido
+## Bienvenido
 
 Esta es la documentaci√≥n profesional para **DEMO3 Presentation**. Un sitio de documentaci√≥n moderno construido con MkDocs Material.
 
 ---
 
-## ‚ú® Caracter√≠sticas Principales
+## Caracter√≠sticas Principales
 
 !!! success "Material Design"
     Interfaz moderna y profesional con tema Material Design de Google
@@ -22,7 +22,7 @@ Esta es la documentaci√≥n profesional para **DEMO3 Presentation**. Un sitio de d
 
 ---
 
-## Ì∫Ä Inicio R√°pido
+## Inicio R√°pido
 
 ### Requisitos Previos
 
@@ -48,7 +48,7 @@ El sitio estar√° disponible en: [http://localhost:8000](http://localhost:8000)
 
 ---
 
-## Ì≥ö Comandos Disponibles
+## Comandos Disponibles
 
 | Comando | Descripci√≥n |
 |---------|-------------|
@@ -60,7 +60,7 @@ El sitio estar√° disponible en: [http://localhost:8000](http://localhost:8000)
 
 ---
 
-## Ìª†Ô∏è Stack Tecnol√≥gico
+## Stack Tecnol√≥gico
 
 - **MkDocs Material** - Framework de documentaci√≥n moderno
 - **GitHub Actions** - CI/CD autom√°tico  
@@ -69,7 +69,7 @@ El sitio estar√° disponible en: [http://localhost:8000](http://localhost:8000)
 
 ---
 
-## Ì≥ñ Estructura del Proyecto
+## Estructura del Proyecto
 
 ```plaintext
 DEMO3-PRESENTATION/
@@ -87,7 +87,7 @@ DEMO3-PRESENTATION/
 
 ---
 
-## Ìæ® Caracter√≠sticas del Tema
+## Caracter√≠sticas del Tema
 
 ### Modo Claro/Oscuro
 
@@ -101,7 +101,7 @@ El sitio soporta autom√°ticamente modo claro y oscuro seg√∫n la preferencia del 
 
 ---
 
-## Ì≥ù Desarrollo
+## Desarrollo
 
 ### Agregar Contenido
 
@@ -112,7 +112,7 @@ El sitio soporta autom√°ticamente modo claro y oscuro seg√∫n la preferencia del 
 
 ---
 
-## Ì∫Ä Deployment
+## Deployment
 
 ### Autom√°tico (Recomendado)
 
@@ -132,18 +132,18 @@ make docs-deploy
 
 ---
 
-## Ì≥ä Estado del Proyecto
+## Estado del Proyecto
 
 | Aspecto | Estado |
 |---------|--------|
-| Desarrollo | ‚úÖ Activo |
-| CI/CD | ‚úÖ Configurado |
-| GitHub Pages | Ì∫ß Pendiente |
-| Documentaci√≥n | ‚úÖ Inicial |
+| Desarrollo | Activo |
+| CI/CD | Configurado |
+| GitHub Pages | Pendiente |
+| Documentaci√≥n | Inicial |
 
 ---
 
-## Ì≥ß Contacto
+## Contacto
 
 **Andrea** - [@andreaendigital](https://github.com/andreaendigital)
 
@@ -153,6 +153,6 @@ make docs-deploy
 
 <div align="center">
 
-**Construido con ‚ù§Ô∏è usando [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)**
+**Construido con amor usando [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)**
 
 </div>
