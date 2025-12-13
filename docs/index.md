@@ -24,35 +24,7 @@ Este proyecto implementa una **arquitectura multi-nube de alta disponibilidad** 
 
 ---
 
-### Arquitectura Objetivo de Multi-Cloud Disaster Recovery
-
-```
-┌──────────────────────────┐         ┌──────────────────────────┐
-│   AWS (PRODUCCIÓN)       │         │   Azure (DR - Standby)   │
-├──────────────────────────┤         ├──────────────────────────┤
-│                          │         │                          │
-│  Usuarios → ALB → EC2    │         │  ❌ VM (Apagada)         │
-│                   ↓      │         │  ❌ LB (Inexistente)     │
-│            RDS MySQL ────┼─────────┼──→ ✅ MySQL Replica     │
-│            (Master)      │   VPN   │     (Activa)            │
-│                          │         │                          │
-│  💰 Costo: ~$100/mes     │         │  💰 Costo: ~$25/mes     │
-└──────────────────────────┘         └──────────────────────────┘
-        NORMAL                              STANDBY
-```
-
-**Ventajas de la arquitectura:**
-
-- [✓] **Alta disponibilidad**: Failover cross-cloud en ~20 minutos
-- [✓] **Protección de datos**: Replicación continua con RPO < 1 segundo
-- [✓] **Costo optimizado**: Azure standby solo DB (~$25/mes vs ~$100/mes full)
-- [✓] **Multi-cloud**: No vendor lock-in, portabilidad entre AWS/Azure
-- [✓] **Automatización**: IaC completo (Terraform) + Config (Ansible)
-
-
----
-
-## 2. Arquitectura de la Solución Multi-Cloud
+## Arquitectura de la Solución Multi-Cloud
 
 La solución se compone de **4 repositorios Git independientes** que trabajan de forma coordinada:
 
@@ -251,7 +223,7 @@ Lag: < 1 second
 
 ---
 
-## 3. Flujo Operacional Normal
+## Flujo Operacional Normal
 
 ### AWS Activo + Azure Standby
 
@@ -690,6 +662,22 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p azureuser@40.71.214.30" -
 
 
 
+## Resumen Ejecutivo Final
+
+**El proyecto demuestra una arquitectura multi-cloud de disaster recovery completamente funcional con:**
+
+[✓] Arquitectura Multi-Cloud Funcional
+[✓] Dos servidores Jenkins independientes
+[✓] SH Jump Host sin IP pública en database
+[✓] **4 repositorios Git** integrados 
+[✓] **2 servidores Jenkins independientes** (uno por cloud, autonomía operativa)  
+[✓] **Replicación MySQL cross-cloud** (AWS RDS → Azure MySQL Flexible Server)  
+[✓] **VPN Site-to-Site IPsec** (túnel seguro entre VPC 10.0.0.0/16 y VNet 10.1.0.0/16)  
+[✓] **3 modos de deployment en azure** (full-stack, replica-only, failover)  
+[✓] **RTO: ~20 minutos | RPO: < 1 segundo**  
+[✓] **Failover manual con notificación automática** (sistema alerta, operador ejecuta)  
+
+
 ### Mejores Prácticas Implementadas
 
 #### 1. Secrets Management
@@ -700,57 +688,14 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p azureuser@40.71.214.30" -
 
 #### 4. Documentation
 
----
+
+**Tecnologías:** Terraform, Ansible, Jenkins, MySQL, VPN IPsec, AWS (VPC, EC2, RDS, ALB), Azure (VNet, VM, MV MySQL, Load Balancer)
+
+
 
 ---
 
-## Conclusiones y Próximos Pasos
-
-### Logros del Proyecto
-
-#### Arquitectura Multi-Cloud Funcional
-
-#### Diferenciadores Técnicos
-
-**Aspectos únicos de esta arquitectura:**
-
-**Dos servidores Jenkins independientes** 
-**SSH Jump Host sin IP pública en database**
-**Modo replica-only cost-optimized**
-
-
-### 6.4 Impacto y Valor del Proyecto
-
-#### Para la Organización
-
-```
-[✓] Reducción de riesgo: Single point of failure eliminado
-[✓] Compliance: Cumple requisitos de DR para auditorías
-[✓] Continuidad de negocio: Downtime máximo 20 min (vs horas/días)
-[✓] Ahorro: Standby cost-optimized ($25/mes vs $100/mes)
-```
-
-#### Para el Equipo Técnico
-
-```
-[✓] Skill development: Multi-cloud, IaC, CI/CD, DB replication
-[✓] Best practices: GitOps, idempotency, documentation
-[✓] Operaciones: Runbooks claros, procedimientos documentados
-[✓] Confianza: Sistema testeado y validado
-```
-
-#### Para Stakeholders
-
-```
-[✓] Visibilidad: Dashboards (futuros) muestran health en tiempo real
-[✓] Predictibilidad: RTO/RPO definidos y medibles
-[✓] Escalabilidad: Arquitectura preparada para crecimiento
-[✓] Costo-beneficio: $25/mes protege contra pérdidas millonarias
-```
-
----
-
-## 7. Recursos 
+## Recursos 
 
 **Repositorios:**
 
@@ -762,18 +707,4 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p azureuser@40.71.214.30" -
 
 ---
 
-## Resumen Ejecutivo Final
-
-**El proyecto demuestra una arquitectura multi-cloud de disaster recovery completamente funcional con:**
-
-[✓] **4 repositorios Git** integrados 
-[✓] **2 servidores Jenkins independientes** (uno por cloud, autonomía operativa)  
-[✓] **Replicación MySQL cross-cloud** (AWS RDS → Azure MySQL Flexible Server)  
-[✓] **VPN Site-to-Site IPsec** (túnel seguro entre VPC 10.0.0.0/16 y VNet 10.1.0.0/16)  
-[✓] **3 modos de deployment en azure** (full-stack, replica-only, failover)  
-[✓] **RTO: ~20 minutos | RPO: < 1 segundo**  
-[✓] **Failover manual con notificación automática** (sistema alerta, operador ejecuta)  
-
-
-**Tecnologías:** Terraform, Ansible, Jenkins, MySQL, VPN IPsec, AWS (VPC, EC2, RDS, ALB), Azure (VNet, VM, MV MySQL, Load Balancer)
 
