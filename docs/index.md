@@ -59,6 +59,8 @@ graph TB
     style Azure fill:#4dabf7
 ```
 
+Esta vista de alto nivel muestra la **arquitectura completa del proyecto multi-nube**. Jenkins actúa como el plano de control central, orquestando deployments independientes en AWS (sitio primario) y Azure (sitio de disaster recovery). La conexión entre ambos clouds se realiza mediante un **túnel VPN site-to-site IPsec**, permitiendo que el RDS MySQL en AWS replique datos en tiempo real hacia el MySQL VM en Azure. Las líneas punteadas indican la replicación asíncrona de base de datos, mientras que las líneas sólidas representan conexiones de aplicación normales. Los colores diferencian claramente el master (rojo) del replica (verde).
+
 ### Arquitectura Detallada: AWS Infrastructure
 
 ```mermaid
@@ -103,6 +105,8 @@ graph TB
     style VPNGW fill:#ffd43b,stroke:#f59f00,stroke-width:2px
 ```
 
+La infraestructura AWS implementa una **arquitectura multi-AZ clásica** con separación entre subnets públicas y privadas. El **Application Load Balancer** distribuye tráfico HTTP hacia la instancia EC2 que corre Gitea. El **RDS MySQL está configurado con binlog ROW format** y 7 días de retención de backups, requisitos esenciales para la replicación. El **VPN Gateway con BGP ASN 65000** establece dos túneles redundantes hacia Azure. Los Security Groups implementan el principio de mínimo privilegio, permitiendo solo el tráfico necesario. El bucket S3 almacena el estado remoto de Terraform, permitiendo colaboración en equipo y prevención de conflictos.
+
 ### Arquitectura Detallada: Azure Infrastructure
 
 ```mermaid
@@ -145,6 +149,8 @@ graph TB
     style VMGitea fill:#fab005,stroke:#f59f00,stroke-width:2px
 ```
 
+La infraestructura Azure implementa una **arquitectura de seguridad mejorada** donde el MySQL VM **no tiene IP pública**, solo accesible mediante **SSH Jump Host** a través del Gitea VM. Esta configuración reduce significativamente la superficie de ataque. El **VPN Gateway tipo VpnGw1** utiliza enrutamiento basado en rutas (RouteBased) para mayor flexibilidad. El **Azure Load Balancer** (IP pública: 172.191.115.230) funciona como punto de entrada único para el tráfico HTTP. Los **Network Security Groups (NSG)** controlan el tráfico a nivel de VM, permitiendo solo conexiones específicas. El Storage Account de Azure almacena el estado de Terraform, equivalente al S3 de AWS pero con integración nativa de Azure.
+
 ### Flujo de Replicación MySQL (AWS → Azure)
 
 ```mermaid
@@ -175,6 +181,8 @@ sequenceDiagram
 
     Note over Master,Replica: Replication Lag: < 1 segundo<br/>Asynchronous streaming
 ```
+
+Este diagrama de secuencia ilustra el **flujo completo de replicación MySQL** desde AWS hacia Azure. Cuando la aplicación Gitea ejecuta operaciones de escritura (INSERT/UPDATE/DELETE) en el RDS Master, estas se registran en el **binlog con formato ROW**, que captura los cambios a nivel de fila. El binlog se transmite de forma continua a través del **túnel VPN IPsec encriptado** (puerto 3306) hacia el MySQL replica en Azure. El replica aplica estos cambios de forma asíncrona, manteniendo un lag objetivo de **menos de 1 segundo**. Los comandos `SHOW SLAVE STATUS` permiten monitorear la salud de la replicación verificando que ambos threads (IO y SQL) estén corriendo. La aplicación Gitea en Azure puede leer del replica para distribuir carga o estar en standby para failover.
 
 ### Arquitectura de Red con SSH Jump Host (Azure)
 
@@ -207,6 +215,8 @@ graph LR
     style MySQLVM fill:#51cf66,stroke:#2f9e44,stroke-width:2px
     style PrivateZone fill:#e9ecef,stroke:#868e96,stroke-width:2px,stroke-dasharray: 5 5
 ```
+
+Este diagrama explica la **arquitectura SSH Jump Host (Bastion Host)** implementada en Azure para acceso seguro. El MySQL VM se encuentra en una **zona privada sin IP pública** (indicada por el área sombreada), accesible únicamente a través del Gitea VM que actúa como jump host. Jenkins y desarrolladores primero establecen conexión SSH al Gitea VM (paso 1-2), y luego utilizan **SSH ProxyJump** (opción `-J`) para saltar al MySQL VM (paso 3-4). El comando completo sería: `ssh -J azureuser@40.71.214.30 azureuser@10.1.1.4`. Ansible utiliza el parámetro `ansible_ssh_common_args` con `ProxyCommand` para automatizar este proceso. Esta arquitectura elimina la necesidad de IPs públicas en bases de datos, reduciendo costos (no se consumen IPs del quota) y mejorando la seguridad (sin exposición directa a Internet).
 
 ### Deployment Modes en Azure
 
@@ -251,5 +261,13 @@ graph TB
     style ReplicaOnly fill:#ffd43b
     style Failover fill:#ff6b6b
 ```
+
+El pipeline de Azure implementa **tres modos de deployment flexibles** controlados por el parámetro `DEPLOYMENT_MODE` en Jenkins:
+
+- **Full-Stack (Azul)**: Despliega la infraestructura completa ideal para demos o entornos de desarrollo. Incluye Gitea VM con IP pública, MySQL VM privada, Load Balancer, y ejecuta Ansible en ambas VMs para configuración completa.
+
+- **Replica-Only (Amarillo)**: Destruye la capa de aplicación (Gitea VM y Load Balancer) pero mantiene el MySQL VM activo como replica de AWS. Activa el VPN Gateway para replicación continua. Este modo es útil para reducir costos manteniendo solo la capacidad de disaster recovery.
+
+- **Failover (Rojo)**: Modo de recuperación ante desastres. Despliega nueva Gitea VM y Load Balancer, pero utiliza el MySQL VM existente que ya contiene datos replicados. Ejecuta `STOP SLAVE` y `RESET SLAVE ALL` para promover el replica a primario. El RTO (Recovery Time Objective) es de aproximadamente 10-15 minutos.
 
 ---
