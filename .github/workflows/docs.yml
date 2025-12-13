@@ -46,6 +46,15 @@ jobs:
       - name: Build documentation
         run: |
           mkdocs build --clean --config-file config/mkdocs.yml --site-dir site
+          
+      - name: List files (debug)
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Files in current directory:"
+          ls -la
+          echo "Checking if site directory exists:"
+          ls -la site/ || echo "site directory not found"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
