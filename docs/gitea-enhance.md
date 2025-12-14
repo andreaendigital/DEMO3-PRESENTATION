@@ -1,4 +1,4 @@
-# Gitea Multi-Cloud Disaster Recovery Infrastructure
+# GITeaEnhance - Multi-Cloud Platform
 
 ![Status](https://img.shields.io/badge/status-production-success.svg)
 ![AWS](https://img.shields.io/badge/cloud-AWS-orange.svg)
@@ -8,12 +8,17 @@
 
 ---
 
-## 📋 Proyecto Multi-Cloud Gitea
+!!! abstract ""
+    <div align="center">
+    <h1 style="color: #2E86AB; font-size: 2.5em; margin: 0.5em 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">
+    🚀 GITEAENHANCE - MULTI-CLOUD PLATFORM
+    </h1>
+    </div>
 
-!!! abstract "Resumen Ejecutivo"
-    **Sistema Gitea** (Git self-hosted) desplegado en **AWS + Azure** con arquitectura de alta disponibilidad, disaster recovery automático y replicación de datos para garantizar **continuidad del servicio 24/7**
+!!! abstract "Executive Summary"
+    **Gitea System** (Git self-hosted) deployed on **AWS + Azure** with high availability architecture, automatic disaster recovery and data replication to ensure **24/7 service continuity**
 
-### ⚡ **Beneficios Principales**
+### ⚡ **Key Benefits**
 
 === "Solution Overview"
     **Enterprise Git Platform with Multi-Cloud Resilience**
@@ -72,54 +77,65 @@
     **Enterprise Value:** Production-ready multi-cloud infrastructure with enterprise-grade disaster recovery and automated failover capabilities.
 
 === "Tech Stack"
-    🏗️ **Infrastructure**: Terraform + Ansible
+    **Multi-Cloud Infrastructure Components**
     
-    🚀 **CI/CD**: Jenkins Enterprise
+    | **Component** | **Technology** | **Purpose** | **Cloud** |
+    |---------------|----------------|-------------|----------|
+    | 🏗️ **Infrastructure** | Terraform | Infrastructure as Code provisioning | AWS + Azure |
+    | ⚙️ **Configuration** | Ansible | Automated application deployment | AWS + Azure |
+    | 🚀 **CI/CD** | Jenkins | Independent build servers per cloud | AWS + Azure |
+    | 🗄️ **Database** | MySQL | Master-Replica with binlog replication | AWS → Azure |
+    | 🔒 **Network** | IPsec VPN | Site-to-Site encrypted tunnel | Cross-Cloud |
+    | 🖥️ **Compute** | EC2 + Azure VM | t3.small + Standard_DC1ds_v3 | Multi-Cloud |
     
-    🗄️ **Database**: MySQL Multi-AZ
-    
-    🔒 **Security**: IPsec VPN Tunnels
-    
-    ☁️ **Clouds**: AWS + Azure
-    
-    **Result**: Enterprise-grade automation with 99.9% uptime
+    **Architecture**: 4 independent Git repositories working in coordination
 
 === "Key Benefits"
-    ✅ **Zero Downtime**: Automatic failover in <3 minutes
+    **Enterprise-Grade Multi-Cloud Capabilities**
     
-    ✅ **Data Safety**: Real-time replication across clouds
+    | **Benefit** | **Implementation** | **Business Value** |
+    |-------------|-------------------|-------------------|
+    | 🛡️ **High Availability** | MySQL Master-Replica replication | < 1 second data lag |
+    | 🔄 **Disaster Recovery** | Cross-cloud failover capability | ~20 minute RTO target |
+    | 🏗️ **Infrastructure as Code** | Terraform + Ansible automation | Repeatable, auditable deployments |
+    | 🔒 **Secure Connectivity** | IPsec VPN Site-to-Site tunnel | Encrypted cross-cloud communication |
+    | 📦 **Independent Deployment** | 4 coordinated Git repositories | Modular, maintainable architecture |
+    | ⚡ **Modern DevOps** | CI/CD with Jenkins per cloud | Automated build and deployment |
     
-    ✅ **Cost Efficient**: Pay only for what you use
-    
-    ✅ **Fully Automated**: Deploy with one command
-
-=== "Live Results"
-    ⚡ **Recovery Time**: 5 minutes
-    
-    🛡️ **Data Loss**: <30 seconds
-    
-    📈 **Uptime**: 99.5%
-    
-    🚀 **Deploy Speed**: 3 minutes
-    
-    **Demo Impact**: Proven enterprise scalability
+    **Demo Value**: Production-ready architecture patterns
 
 === "Disaster Recovery Process"
-    **Automated Monitoring & Failover:**
+    **Manual Failover Flow**
     
-    1️⃣ 🔍 **Azure Lambda monitors** AWS Gitea endpoint every 5 minutes
+    ```mermaid
+    flowchart LR
+        A["1️⃣ 🔍 Failure Detection<br/>Real-time<br/>(Automated)"] --> B["2️⃣ 📧 Alert Notification<br/>Immediate<br/>(Automated)"]
+        B --> C["3️⃣ 👨💻 Team Analysis<br/>5-10 min<br/>(Manual)"]
+        C --> D["4️⃣ 🚀 DR Activation<br/>5-10 min<br/>(Manual)"]
+        D --> E["5️⃣ ⚡ Service Restored<br/>< 5 min<br/>(Automated)"]
+        
+        classDef automated fill:#e8f5e8,stroke:#4caf50,stroke-width:2px
+        classDef manual fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+        
+        class A,B,E automated
+        class C,D manual
+    ```
     
-    2️⃣ 📧 **Email alert sent** when AWS Gitea becomes unavailable
-    
-    3️⃣ 👨💻 **Team analyzes** the failure and triggers Azure DR pipeline
-    
-    4️⃣ 🚀 **Azure Gitea activates** using replicated MySQL data
-    
-    5️⃣ 🔄 **AWS infrastructure rebuilds** while Azure serves users
-    
-    **Result**: Maximum 5-minute detection + manual activation = ~10 minute total RTO
+    **Results**: RTO ~20 minutes | RPO < 1 second | MySQL binlog replication
 
-### DevOps Workflow Multi-Cloud
+!!! tip ""
+    <div align="center">
+    <h2 style="color: #27AE60; font-size: 2em; margin: 0.5em 0; font-weight: 600; letter-spacing: 1px;">
+    🔄 DEVOPS WORKFLOW MULTI-CLOUD
+    </h2>
+    </div>
+
+**Enterprise DevOps Pipeline:**
+
+- Production-grade multi-cloud CI/CD with 4 coordinated Git repositories
+- Terraform provisions AWS (EC2, RDS) and Azure (VM, MySQL) infrastructure
+- Ansible deploys Gitea v1.21.5 with IPsec VPN replication (< 1s lag)
+- Independent Jenkins servers per cloud for credential isolation
 
 ```mermaid
 graph LR
@@ -172,18 +188,97 @@ graph LR
 
 ---
 
-## Arquitectura de la Solución Multi-Cloud
+!!! example ""
+    <div align="center">
+    <h2 style="color: #8E44AD; font-size: 2em; margin: 0.5em 0; font-weight: 600; letter-spacing: 1px;">
+    🏗️ KEY ARCHITECTURE DECISIONS
+    </h2>
+    </div>
 
-La solución se compone de **4 repositorios Git independientes** que trabajan de forma coordinada:
+=== "Two Independent Jenkins Servers"
+    - **Context:** Each cloud provider requires specific credentials, configurations and access policies
+    - **Decision:** Deploy a dedicated Jenkins server in each cloud (Jenkins AWS + Jenkins Azure) instead of a single centralized Jenkins
+    - **Credential isolation**: Each Jenkins only has access to its cloud
+    - **Operational autonomy**: Azure can operate independently if AWS fails
+    - **Security**: Reduced attack surface (no cross-cloud credentials in one place)
 
-| Repositorio               | Cloud | Tipo           | Propósito                                |
+    ```mermaid
+    graph TB
+        subgraph "Multi-Cloud Jenkins Architecture"
+            subgraph AWS["☁️ AWS Cloud"]
+                JenkinsAWS["🤖 Jenkins AWS<br/>- AWS Credentials<br/>- EC2 Access<br/>- RDS Management"]
+                InfraAWS["🏗️ AWS Infrastructure<br/>- VPC, EC2, RDS<br/>- Security Groups"]
+            end
+            
+            subgraph Azure["☁️ Azure Cloud"]
+                JenkinsAZ["🤖 Jenkins Azure<br/>- Azure Credentials<br/>- VM Access<br/>- MySQL Management"]
+                InfraAZ["🏗️ Azure Infrastructure<br/>- VNet, VM, MySQL<br/>- NSG Rules"]
+            end
+            
+            Dev["👨💻 DevOps Team"]
+            
+            Dev --> JenkinsAWS
+            Dev --> JenkinsAZ
+            JenkinsAWS --> InfraAWS
+            JenkinsAZ --> InfraAZ
+            
+            InfraAWS -.->|"🔒 VPN Tunnel"| InfraAZ
+        end
+        
+        classDef aws fill:#ff9900,stroke:#232f3e,stroke-width:2px,color:#fff
+        classDef azure fill:#0078d4,stroke:#ffffff,stroke-width:2px,color:#fff
+        classDef dev fill:#2ecc71,stroke:#27ae60,stroke-width:2px,color:#fff
+        
+        class JenkinsAWS,InfraAWS aws
+        class JenkinsAZ,InfraAZ azure
+        class Dev dev
+    ```
+
+=== "Unidirectional MySQL Replication (AWS → Azure)"
+    - **Context:** Define data flow between clouds
+    - **Decision:** Unidirectional master-slave replication from AWS (Master) to Azure (Replica)
+    - **Simplicity**: Avoids bidirectional synchronization conflicts
+    - **Clear role**: AWS is PRIMARY, Azure is DR
+    - **Split-brain prevention**: No simultaneous writes in both clouds
+
+    **Replication flow:**
+
+    ```mermaid
+    graph LR
+        UserOp["👤 User Operation<br/>INSERT/UPDATE/DELETE"] --> RDSMaster["🗄️ RDS MySQL (Master)<br/>AWS Cloud"]
+        RDSMaster --> Transmission["📝 Data Transmission<br/>Through VPN"]
+        Transmission --> MySQLReplica["🗄️ MySQL Replica<br/>Azure Cloud"]
+        MySQLReplica --> ProcessThread["🔄 Process & Apply<br/>Events"]
+        ProcessThread --> Active["✅ REPLICATION ACTIVE<br/>Lag: < 1 second"]
+        
+        classDef aws fill:#ff9900,stroke:#232f3e,stroke-width:2px,color:#fff
+        classDef azure fill:#0078d4,stroke:#ffffff,stroke-width:2px,color:#fff
+        classDef process fill:#9b59b6,stroke:#8e44ad,stroke-width:2px,color:#fff
+        classDef success fill:#27ae60,stroke:#229954,stroke-width:2px,color:#fff
+        
+        class RDSMaster aws
+        class MySQLReplica azure
+        class UserOp,Binlog,Transmission,IOThread,SQLThread process
+        class Active success
+    ```
+
+---
+
+!!! quote ""
+    <div align="center">
+    <h2 style="color: #E67E22; font-size: 2em; margin: 0.5em 0; font-weight: 600; letter-spacing: 1px;">
+    🌐 MULTI-CLOUD SOLUTION ARCHITECTURE
+    </h2>
+    </div>
+
+The solution consists of **4 independent Git repositories** working in coordination:
+
+| Repository                | Cloud | Type           | Purpose                                  |
 | ------------------------- | ----- | -------------- | ---------------------------------------- |
-| **tf-infra-demoGitea**    | AWS   | Terraform IaC  | Provisiona infraestructura AWS (Primary) |
-| **ansible-demoGitea**     | AWS   | Ansible Config | Despliega/configura Gitea en AWS EC2     |
-| **tf-az-infra-demoGitea** | Azure | Terraform IaC  | Provisiona infraestructura Azure (DR)    |
-| **ansible-az-demoGitea**  | Azure | Ansible Config | Despliega/configura Gitea en Azure VM    |
-
-
+| **tf-infra-demoGitea**    | AWS   | Terraform IaC  | Provisions AWS infrastructure (Primary)  |
+| **ansible-demoGitea**     | AWS   | Ansible Config | Deploys/configures Gitea on AWS EC2     |
+| **tf-az-infra-demoGitea** | Azure | Terraform IaC  | Provisions Azure infrastructure (DR)     |
+| **ansible-az-demoGitea**  | Azure | Ansible Config | Deploys/configures Gitea on Azure VM    |
 
 ---
 

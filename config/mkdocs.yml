@@ -80,6 +80,9 @@ markdown_extensions:
 nav:
   - Home: index.md
   - GITeaEnhance: gitea-enhance.md
+  - Flujo Operacional: flujo-operacional.md
+  - Disaster Recovery: disaster-recovery.md
+  - Resumen Ejecutivo: resumen-ejecutivo.md
   - Resources:
     - AWS Infrastructure:
       - Overview: recursos/tf-infra-demogitea/README.md
