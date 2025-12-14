@@ -5,6 +5,11 @@ site_url: https://andreaendigital.github.io/DEMO3-PRESENTATION/
 
 docs_dir: ../docs
 
+watch:
+  - ../docs/
+
+dev_addr: '127.0.0.1:8000'
+
 repo_name: andreaendigital/DEMO3-PRESENTATION
 repo_url: https://github.com/andreaendigital/DEMO3-PRESENTATION
 
@@ -37,17 +42,21 @@ theme:
     - navigation.top
     - search.highlight
     - search.suggest
-    - toc.follow
+    - toc.integrate
   font:
     text: Inter
     code: JetBrains Mono
   icon:
     repo: fontawesome/brands/github
 
+extra_javascript:
+  - https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js
+
 plugins:
   - search
   - git-revision-date-localized:
       enable_creation_date: true
+  - mermaid2
 
 markdown_extensions:
   - admonition
@@ -58,7 +67,11 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
@@ -66,5 +79,20 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - GITeaEnhance: gitea-enhance.md
+  - Resources:
+    - AWS Infrastructure:
+      - Overview: recursos/tf-infra-demogitea/README.md
+      - Replication Setup: recursos/tf-infra-demogitea/REPLICATION_SETUP.md
+    - AWS Configuration:
+      - Overview: recursos/ansible-demogitea/README.md
+      - Auto Configuration: recursos/ansible-demogitea/CONFIGURACION_AUTOMATICA.md
+    - Azure Infrastructure:
+      - Overview: recursos/tf-az-infra-demogitea/README.md
+      - Failover Architecture: recursos/tf-az-infra-demogitea/FAILOVER_ARCHITECTURE.md
+      - Jenkins Setup: recursos/tf-az-infra-demogitea/JENKINS_SETUP.md
+      - Repository Relationships: recursos/tf-az-infra-demogitea/REPOSITORY_RELATIONSHIPS.md
+    - Azure Configuration:
+      - Overview: recursos/ansible-az-demogitea/README.md
 
 copyright: Copyright &copy; 2025 Andrea - DEMO3 Presentation

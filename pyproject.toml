@@ -17,9 +17,13 @@ docs = [
     "mkdocs-material>=9.5.0",
     "mkdocs-git-revision-date-localized-plugin>=1.2.0",
     "pymdown-extensions>=10.7.0",
+    "mkdocs-mermaid2-plugin>=1.1.0",
 ]
 dev = [
     "demo3-presentation[docs]",
+    "pre-commit>=3.0.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
 ]
 
 [project.urls]
