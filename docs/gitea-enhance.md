@@ -262,6 +262,54 @@ graph LR
         class Active success
     ```
 
+=== "SSH Jump Host (Bastion) Architecture"
+    - **Context:** MySQL database security requirements in Azure cloud
+    - **Decision:** Deploy MySQL VM without public IP, accessible only via SSH ProxyJump through Gitea VM
+    - **Security**: MySQL not exposed to Internet
+    - **Cost optimization**: No additional public IP consumption
+    - **Compliance**: Enhanced security posture for audits
+    - **Trade-off**: Ansible requires ProxyCommand configuration
+
+    **Access Architecture:**
+
+    ```mermaid
+    graph TB
+        subgraph Internet["🌐 Internet"]
+            Dev["👨💻 Developer/Jenkins<br/>External Access"]
+        end
+        
+        subgraph Azure["☁️ Azure VNet (10.1.0.0/16)"]
+            subgraph Public["🌍 Public Subnet"]
+                Gitea["🚀 Gitea VM (Jump Host)<br/>Public IP: 40.71.214.30<br/>Private IP: 10.1.0.5<br/>Port 22: SSH ✓<br/>Port 3000: HTTP ✓"]
+            end
+            
+            subgraph Private["🔒 Private Subnet"]
+                MySQL["🗄️ MySQL VM<br/>Public IP: NONE<br/>Private IP: 10.1.1.4<br/>Port 22: SSH ✓<br/>Port 3306: MySQL ✓"]
+            end
+        end
+        
+        %% Connections
+        Dev -->|"Direct SSH<br/>ssh azureuser@40.71.214.30"| Gitea
+        Dev -.->|"ProxyJump SSH<br/>ssh -J azureuser@40.71.214.30<br/>azureuser@10.1.1.4"| MySQL
+        Gitea -->|"Internal Routing<br/>Private Network"| MySQL
+        
+        %% Styling
+        classDef public fill:#e74c3c,stroke:#c0392b,stroke-width:2px,color:#fff
+        classDef private fill:#27ae60,stroke:#229954,stroke-width:2px,color:#fff
+        classDef external fill:#3498db,stroke:#2980b9,stroke-width:2px,color:#fff
+        
+        class Gitea public
+        class MySQL private
+        class Dev external
+    ```
+    
+    **Security Benefits:**
+    
+    ✅ **Zero Internet Exposure**: MySQL VM completely isolated from public access  
+    ✅ **Controlled Access Point**: Single entry point through hardened jump host  
+    ✅ **Cost Efficient**: Saves additional public IP allocation costs  
+    ✅ **Audit Compliance**: Meets enterprise security standards for database access
+
 ---
 
 !!! quote ""
