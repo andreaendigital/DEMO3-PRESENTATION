@@ -23,7 +23,7 @@
 === "Solution Overview"
     **Enterprise Git Platform with Multi-Cloud Resilience**
 
-   ![Platform with Multi-Cloud Resilience](assets/main.gif) 
+   ![Platform with Multi-Cloud Resilience](assets/main2.gif) 
   
     🎯 **SLA Compliance**: 99.9% Uptime Target | 🛡️ **Data Integrity**: RPO < 15 seconds | ⚡ **Business Continuity**: RTO < 3 minutes
     
