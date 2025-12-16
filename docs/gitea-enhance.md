@@ -182,7 +182,7 @@
 
     **Access Architecture:**
 
-    ![Platform with Multi-Cloud Resilience](assets/bastion2.gif) 
+    ![Platform with Multi-Cloud Resilience](assets/bastion3.gif) 
     
     **Security Benefits:**
     
