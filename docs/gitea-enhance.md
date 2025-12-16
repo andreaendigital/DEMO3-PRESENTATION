@@ -24,58 +24,7 @@
     **Enterprise Git Platform with Multi-Cloud Resilience**
 
    ![Platform with Multi-Cloud Resilience](assets/main.gif) 
-
-    <!-- 
-    ```mermaid
-    graph TB
-        %% User Layer
-        Users["👨💼 Enterprise Users"]
-        CICD["🚀 CI/CD Pipeline"]
-        
-        %% Cloud Regions
-        subgraph AWS["☁️ AWS Production Region"]
-            GitAWS["🏢 Gitea Enterprise Platform"]
-            RDSAWS["🗄️ MySQL Master (RDS Multi-AZ)"]
-            MonAWS["📊 Real-time Monitoring"]
-        end
-        
-        subgraph Azure["☁️ Azure DR Region"]
-            GitAZ["🛡️ Gitea DR Site"]
-            RDSAZ["🗄️ MySQL Replica (Flexible)"]
-            MonAZ["📈 Health Monitoring"]
-        end
-        
-        %% Monitoring
-        Monitor["🔍 Azure Lambda Monitor"]
-        Email["📧 Email Alert"]
-        Pipeline["🚀 Azure DR Pipeline"]
-        
-        %% Connections
-        Users --> CICD
-        CICD --> GitAWS
-        
-        GitAWS --> RDSAWS
-        GitAZ --> RDSAZ
-        
-        RDSAWS -.->|"📡 Binlog Replication"| RDSAZ
-        
-        %% DR Workflow
-        Monitor -.->|"Check every 5min"| GitAWS
-        Monitor -->|"Failure detected"| Email
-        Email --> Pipeline
-        Pipeline --> GitAZ
-        
-        %% Styling
-        classDef aws fill:#ff9900,stroke:#232f3e,stroke-width:2px,color:#fff
-        classDef azure fill:#0078d4,stroke:#ffffff,stroke-width:2px,color:#fff
-        classDef monitor fill:#e74c3c,stroke:#c0392b,stroke-width:2px,color:#fff
-        
-        class GitAWS,RDSAWS,MonAWS aws
-        class GitAZ,RDSAZ,MonAZ,Monitor,Email,Pipeline azure
-        class Monitor,Email,Pipeline monitor
-    ```
-    -->
-    
+  
     🎯 **SLA Compliance**: 99.9% Uptime Target | 🛡️ **Data Integrity**: RPO < 15 seconds | ⚡ **Business Continuity**: RTO < 3 minutes
     
     **Enterprise Value:** Production-ready multi-cloud infrastructure with enterprise-grade disaster recovery and automated failover capabilities.
