@@ -26,9 +26,6 @@
     
     
    ![VPN Tunnel Topology with Binlog Streaming](assets/binlog2%20(2).gif) 
-
-
-   ![VPN Tunnel Topology with Binlog Streaming](assets/Untitled%20design.gif) 
     
 
 
@@ -46,9 +43,17 @@
    ![Lambda Monitoring Flow Diagram](assets/lambda.drawio.png) 
     
 
+!!! info ""
+    <div align="center">
+    <h2 style="color: #3498DB; font-size: 1.8em; margin: 0.5em 0; font-weight: 600;">
+    ⚡ Executing the Recovery
+    </h2>
+    </div>
 
 
+=== "Jenkins Pipeline Failover"
 
+   ![Jenkins Pipeline for Failover](assets/failover1.gif) 
 
 
 
