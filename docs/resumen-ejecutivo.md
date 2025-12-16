@@ -98,19 +98,6 @@ graph TB
     class VPN network
 ```
 
-!!! success ""
-    <div align="center">
-    <h2 style="color: #27AE60; font-size: 1.8em; margin: 0.5em 0; font-weight: 600;">
-    📂 REPOSITORIES
-    </h2>
-    </div>
-
-| **Repository** | **Technology** | **Purpose** |
-|----------------|----------------|-------------|
-| [tf-infra-demoGitea](https://github.com/andreaendigital/tf-infra-demoGitea) | Terraform | AWS Infrastructure |
-| [ansible-demoGitea](https://github.com/andreaendigital/ansible-demoGitea) | Ansible | AWS Configuration |
-| [tf-az-infra-demoGitea](https://github.com/andreaendigital/tf-az-infra-demoGitea) | Terraform | Azure Infrastructure |
-| [ansible-az-demoGitea](https://github.com/andreaendigital/ansible-az-demoGitea) | Ansible | Azure Configuration |
 
 ---
 

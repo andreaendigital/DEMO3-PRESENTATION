@@ -204,10 +204,10 @@ The solution consists of **4 independent Git repositories** working in coordinat
 
 | Repository                | Cloud | Type           | Purpose                                  |
 | ------------------------- | ----- | -------------- | ---------------------------------------- |
-| **tf-infra-demoGitea**    | AWS   | Terraform IaC  | Provisions AWS infrastructure (Primary)  |
-| **ansible-demoGitea**     | AWS   | Ansible Config | Deploys/configures Gitea on AWS EC2     |
-| **tf-az-infra-demoGitea** | Azure | Terraform IaC  | Provisions Azure infrastructure (DR)     |
-| **ansible-az-demoGitea**  | Azure | Ansible Config | Deploys/configures Gitea on Azure VM    |
+| [tf-infra-demoGitea](https://github.com/andreaendigital/tf-infra-demoGitea)    | AWS   | Terraform IaC  | Provisions AWS infrastructure (Primary)  |
+| [ansible-demoGitea](https://github.com/andreaendigital/ansible-demoGitea)     | AWS   | Ansible Config | Deploys/configures Gitea on AWS EC2     |
+| [tf-az-infra-demoGitea](https://github.com/andreaendigital/tf-az-infra-demoGitea) | Azure | Terraform IaC  | Provisions Azure infrastructure (DR)     |
+| [ansible-az-demoGitea](https://github.com/andreaendigital/ansible-az-demoGitea)  | Azure | Ansible Config | Deploys/configures Gitea on Azure VM    |
 
 ---
 
