@@ -13,6 +13,66 @@
     </h1>
     </div>
 
+
+=== "Solution Overview"
+    **Enterprise Git Platform with Multi-Cloud Resilience**
+    
+    ```mermaid
+sequenceDiagram
+participant User as 👨‍💻 User
+participant Gitea as 🖥️ AWS Gitea
+participant RDS as 🗄️ AWS RDS<br/>(PRIMARY)
+participant VPN as 🔐 VPN Tunnel<br/>(IPsec)
+participant AzMySQL as 🗄️ Azure MySQL<br/>(REPLICA)
+participant AzGitea as 🖥️ Azure Gitea
+
+    Note over User,AzGitea: NORMAL OPERATION - Data Synchronization
+
+    User->>Gitea: 1️⃣ Git Push (commit code)
+    activate Gitea
+    Gitea->>RDS: 2️⃣ INSERT INTO repositories
+    activate RDS
+    RDS->>RDS: 3️⃣ Write to Binlog<br/>mysql-bin.000001:157
+    Note over RDS: Binlog Format: ROW<br/>Backup Retention: 7 days
+
+    RDS->>VPN: 4️⃣ Stream Binlog Events<br/>(Encrypted AES-256)
+    activate VPN
+    VPN->>AzMySQL: 5️⃣ Decrypt & Forward<br/>Binlog Stream
+    activate AzMySQL
+
+    AzMySQL->>AzMySQL: 6️⃣ Slave IO Thread<br/>Reads & Writes Relay Log
+    AzMySQL->>AzMySQL: 7️⃣ Slave SQL Thread<br/>Applies Changes
+    Note over AzMySQL: Slave_IO_Running: Yes<br/>Slave_SQL_Running: Yes<br/>Seconds_Behind_Master: 0
+
+    deactivate AzMySQL
+    deactivate VPN
+    RDS-->>Gitea: 8️⃣ INSERT Confirmed
+    deactivate RDS
+    Gitea-->>User: 9️⃣ Push Success ✅
+    deactivate Gitea
+
+    Note over User,AzGitea: DATA SYNCHRONIZED - Both clouds have same data
+
+    User->>AzGitea: 🔍 Read Repository (failover test)
+    activate AzGitea
+    AzGitea->>AzMySQL: SELECT * FROM repositories
+    activate AzMySQL
+    AzMySQL-->>AzGitea: ✅ Same data as AWS
+    deactivate AzMySQL
+    AzGitea-->>User: ✅ Repository visible
+    deactivate AzGitea
+    ```
+    
+
+
+
+
+
+
+
+
+
+
 ## Disaster Scenario: AWS Complete Outage
 
 !!! warning "Critical Situation"
