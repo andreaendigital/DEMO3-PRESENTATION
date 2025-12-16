@@ -1,4 +1,4 @@
-# Disaster Recovery Manual
+# Disaster Recovery 
 
 ![Status](https://img.shields.io/badge/status-production-success.svg)
 ![RTO](https://img.shields.io/badge/RTO-20%20minutes-green.svg)
@@ -6,12 +6,14 @@
 
 ---
 
-!!! danger ""
-    <div align="center">
-    <h1 style="color: #E74C3C; font-size: 2.5em; margin: 0.5em 0; font-weight: 700;">
-    🚨 DISASTER RECOVERY MANUAL
-    </h1>
-    </div>
+
+
+!!! abstract " "
+    Automated Fault Detection of the PRIMARY environment (AWS) to initiate a manual failover to the DR site (Azure).
+
+
+
+
 
 !!! info ""
     <div align="center">
@@ -24,6 +26,7 @@
     
     
    ![VPN Tunnel Topology with Binlog Streaming](assets/binlog2.gif) 
+   <img src="assets/binlog2.gif" alt="Demo" width="1300">
    ![VPN Tunnel Topology with Binlog Streaming](assets/Untitled%20design.gif) 
     
 
