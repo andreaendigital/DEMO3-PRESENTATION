@@ -29,7 +29,7 @@
 
     ![Platform with Multi-Cloud Resilience](assets/main2.gif) 
 
-    
+
 
 === "Tech Stack"
     **Multi-Cloud Infrastructure Components**
@@ -181,23 +181,8 @@
     - **Trade-off**: Ansible requires ProxyCommand configuration
 
     **Access Architecture:**
-
-    ```mermaid
-    graph LR
-        Dev["👨💻 Developer/Jenkins<br/>External Access"] -->|"Direct SSH<br/>ssh azureuser@40.71.214.30"| Gitea["🚀 Gitea VM (Jump Host)<br/>Public IP: 40.71.214.30<br/>Private IP: 10.1.0.5<br/>Port 22: SSH ✓<br/>Port 3000: HTTP ✓"]
-        
-        Gitea -->|"Internal Network<br/>Private Routing"| MySQL["🗄️ MySQL VM<br/>Public IP: NONE<br/>Private IP: 10.1.1.4<br/>Port 22: SSH ✓<br/>Port 3306: MySQL ✓"]
-        
-        Dev -.->|"ProxyJump SSH<br/>ssh -J azureuser@40.71.214.30<br/>azureuser@10.1.1.4"| MySQL
-        
-        classDef public fill:#e74c3c,stroke:#fff,stroke-width:2px,color:#fff
-        classDef private fill:#27ae60,stroke:#fff,stroke-width:2px,color:#fff
-        classDef external fill:#3498db,stroke:#fff,stroke-width:2px,color:#fff
-        
-        class Gitea public
-        class MySQL private
-        class Dev external
-    ```
+    
+    ![Platform with Multi-Cloud Resilience](assets/main2.gif) 
     
     **Security Benefits:**
     
