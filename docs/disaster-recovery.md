@@ -25,8 +25,9 @@
 === "VPN Tunnel Topology with Binlog Streaming"
     
     
-   ![VPN Tunnel Topology with Binlog Streaming](assets/binlog2.gif) 
-   <img src="assets/binlog2.gif"  width="100%">
+   ![VPN Tunnel Topology with Binlog Streaming](assets/binlog2%20(2).gif) 
+
+
    ![VPN Tunnel Topology with Binlog Streaming](assets/Untitled%20design.gif) 
     
 
