@@ -83,59 +83,14 @@
     </h2>
     </div>
 
-**Enterprise DevOps Pipeline:**
+**DevOps Pipeline:**
 
 - Production-grade multi-cloud CI/CD with 4 coordinated Git repositories
 - Terraform provisions AWS (EC2, RDS) and Azure (VM, MySQL) infrastructure
 - Ansible deploys Gitea v1.21.5 with IPsec VPN replication (< 1s lag)
 - Independent Jenkins servers per cloud for credential isolation
 
-```mermaid
-graph LR
-    %% DevOps Pipeline
-    subgraph DevOps["🏗️ DevOps Pipeline"]
-        Dev["👨💻 Developers"]
-        Git["📋 Git Repository"]
-        CI["🚀 CI/CD Pipeline"]
-    end
-    
-    %% Infrastructure Layer
-    subgraph IaC["⚙️ Infrastructure as Code"]
-        TerraAWS["Terraform AWS"]
-        TerraAZ["Terraform Azure"]
-    end
-    
-    %% Configuration Layer
-    subgraph Config["🔧 Configuration Management"]
-        AnsAWS["Ansible AWS"]
-        AnsAZ["Ansible Azure"]
-    end
-    
-    %% Production Environment
-    subgraph Prod["🌐 Production Environment"]
-        direction TB
-        AWS["☁️ AWS Primary"]
-        Azure["☁️ Azure DR"]
-        AWS -.->|"Replication"| Azure
-    end
-    
-    %% Flow
-    Dev --> Git --> CI
-    CI --> IaC
-    IaC --> Config
-    Config --> Prod
-    
-    %% Styling
-    classDef devops fill:#2ecc71,stroke:#27ae60,stroke-width:2px,color:#fff
-    classDef infra fill:#9b59b6,stroke:#8e44ad,stroke-width:2px,color:#fff
-    classDef aws fill:#ff9900,stroke:#232f3e,stroke-width:2px,color:#fff
-    classDef azure fill:#0078d4,stroke:#ffffff,stroke-width:2px,color:#fff
-    
-    class Dev,Git,CI devops
-    class TerraAWS,TerraAZ,AnsAWS,AnsAZ infra
-    class AWS aws
-    class Azure azure
-```
+   ![DEVOPS WORKFLOW MULTI-CLOUD](assets/devopsworkflow.gif) 
 
 
 
