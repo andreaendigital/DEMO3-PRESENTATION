@@ -262,6 +262,40 @@ graph LR
         class Active success
     ```
 
+=== "SSH Jump Host (Bastion) Architecture"
+    - **Context:** MySQL database security requirements in Azure cloud
+    - **Decision:** Deploy MySQL VM without public IP, accessible only via SSH ProxyJump through Gitea VM
+    - **Security**: MySQL not exposed to Internet
+    - **Cost optimization**: No additional public IP consumption
+    - **Compliance**: Enhanced security posture for audits
+    - **Trade-off**: Ansible requires ProxyCommand configuration
+
+    **Access Architecture:**
+
+    ```mermaid
+    graph LR
+        Dev["👨💻 Developer/Jenkins<br/>External Access"] -->|"Direct SSH<br/>ssh azureuser@40.71.214.30"| Gitea["🚀 Gitea VM (Jump Host)<br/>Public IP: 40.71.214.30<br/>Private IP: 10.1.0.5<br/>Port 22: SSH ✓<br/>Port 3000: HTTP ✓"]
+        
+        Gitea -->|"Internal Network<br/>Private Routing"| MySQL["🗄️ MySQL VM<br/>Public IP: NONE<br/>Private IP: 10.1.1.4<br/>Port 22: SSH ✓<br/>Port 3306: MySQL ✓"]
+        
+        Dev -.->|"ProxyJump SSH<br/>ssh -J azureuser@40.71.214.30<br/>azureuser@10.1.1.4"| MySQL
+        
+        classDef public fill:#e74c3c,stroke:#fff,stroke-width:2px,color:#fff
+        classDef private fill:#27ae60,stroke:#fff,stroke-width:2px,color:#fff
+        classDef external fill:#3498db,stroke:#fff,stroke-width:2px,color:#fff
+        
+        class Gitea public
+        class MySQL private
+        class Dev external
+    ```
+    
+    **Security Benefits:**
+    
+    ✅ **Zero Internet Exposure**: MySQL VM completely isolated from public access  
+    ✅ **Controlled Access Point**: Single entry point through hardened jump host  
+    ✅ **Cost Efficient**: Saves additional public IP allocation costs  
+    ✅ **Audit Compliance**: Meets enterprise security standards for database access
+
 ---
 
 !!! quote ""
