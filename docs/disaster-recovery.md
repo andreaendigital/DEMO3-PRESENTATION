@@ -13,6 +13,37 @@
     </h1>
     </div>
 
+!!! info ""
+    <div align="center">
+    <h2 style="color: #3498DB; font-size: 1.8em; margin: 0.5em 0; font-weight: 600;">
+    🔧 Replication Infrastructure 
+    </h2>
+    </div>
+
+
+!!! info ""
+    <div align="center">
+    <h2 style="color: #3498DB; font-size: 1.8em; margin: 0.5em 0; font-weight: 600;">
+    🔧 Fall Detection and Alert Activation
+    </h2>
+    </div>
+
+
+=== "MONITORING ARQUITECTURE"
+    
+    
+   ![Lambda Monitoring Flow Diagram](assets/lambda.drawio.png) 
+    
+
+
+
+
+
+
+
+
+
+
 ## Disaster Scenario: AWS Complete Outage
 
 !!! warning "Critical Situation"
