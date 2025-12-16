@@ -31,39 +31,39 @@
     
     ```hcl
     # Cross-cloud VPN connection
-    resource "aws_vpn_connection" "azure" {
-  count               = var.enable_vpn_gateway ? 1 : 0
-  vpn_gateway_id      = aws_vpn_gateway.main[0].id
-  customer_gateway_id = aws_customer_gateway.azure[0].id
-  type                = "ipsec.1"
-  static_routes_only  = true
+      resource "aws_vpn_connection" "azure" {
+      count               = var.enable_vpn_gateway ? 1 : 0
+      vpn_gateway_id      = aws_vpn_gateway.main[0].id
+      customer_gateway_id = aws_customer_gateway.azure[0].id
+      type                = "ipsec.1"
+      static_routes_only  = true
 
-  # Tunnel 1 configuration
-  tunnel1_preshared_key = var.vpn_shared_key
+        # Tunnel 1 configuration
+        tunnel1_preshared_key = var.vpn_shared_key
 
-  tags = {
-    Name    = "infraGitea-vpn-connection-azure"
-    Project = "infraGitea"
-  }
-}
+        tags = {
+          Name    = "infraGitea-vpn-connection-azure"
+          Project = "infraGitea"
+        }
+      }
 
     
-resource "azurerm_virtual_network_gateway_connection" "aws" {
-  count               = var.deployment_mode == "replica-only" && var.aws_vpn_gateway_ip != "" ? 1 : 0
-  name                = "vpnconn-to-aws-${var.environment}"
-  location            = var.location
-  resource_group_name = azurerm_resource_group.main.name
+      resource "azurerm_virtual_network_gateway_connection" "aws" {
+        count               = var.deployment_mode == "replica-only" && var.aws_vpn_gateway_ip != "" ? 1 : 0
+        name                = "vpnconn-to-aws-${var.environment}"
+        location            = var.location
+        resource_group_name = azurerm_resource_group.main.name
 
-  type                       = "IPsec"
-  virtual_network_gateway_id = azurerm_virtual_network_gateway.main[0].id
-  local_network_gateway_id   = azurerm_local_network_gateway.aws[0].id
+        type                       = "IPsec"
+        virtual_network_gateway_id = azurerm_virtual_network_gateway.main[0].id
+        local_network_gateway_id   = azurerm_local_network_gateway.aws[0].id
 
-  shared_key = var.vpn_shared_key
+        shared_key = var.vpn_shared_key
 
-  tags = merge(var.tags, {
-    environment = var.environment
-  })
-}
+        tags = merge(var.tags, {
+          environment = var.environment
+        })
+      }
     ```
     
     - Secure Cross-Cloud Interconnection: The bidirectional IPsec VPN tunnel provides the encrypted and private connection necessary for the MySQL IO Thread to communicate with the MySQL Master's Binlog.
@@ -90,9 +90,9 @@ resource "azurerm_virtual_network_gateway_connection" "aws" {
     
     **Key Features:**
     
-    - ✅ **ROW Format**: Precise row-level replication
-    - ✅ **Real-time**: < 1 second replication lag
-    - ✅ **Data Safety**: Exact data replication for failover
+    - **ROW Format**: Precise row-level replication
+    - **Real-time**: < 1 second replication lag
+    - **Data Safety**: Exact data replication for failover
     
 
 
