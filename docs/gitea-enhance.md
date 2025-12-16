@@ -22,7 +22,10 @@
 
 === "Solution Overview"
     **Enterprise Git Platform with Multi-Cloud Resilience**
-    
+
+   ![Platform with Multi-Cloud Resilience](assets/main.gif) 
+
+    <!-- 
     ```mermaid
     graph TB
         %% User Layer
@@ -71,6 +74,7 @@
         class GitAZ,RDSAZ,MonAZ,Monitor,Email,Pipeline azure
         class Monitor,Email,Pipeline monitor
     ```
+    -->
     
     🎯 **SLA Compliance**: 99.9% Uptime Target | 🛡️ **Data Integrity**: RPO < 15 seconds | ⚡ **Business Continuity**: RTO < 3 minutes
     
