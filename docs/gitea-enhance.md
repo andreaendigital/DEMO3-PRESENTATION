@@ -181,8 +181,8 @@
     - **Trade-off**: Ansible requires ProxyCommand configuration
 
     **Access Architecture:**
-    
-    ![Platform with Multi-Cloud Resilience](assets/main2.gif) 
+
+    ![Platform with Multi-Cloud Resilience](assets/bastion.gif) 
     
     **Security Benefits:**
     
