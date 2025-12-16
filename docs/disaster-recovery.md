@@ -14,17 +14,16 @@
     </div>
 
 
-=== "Solution Overview"
-    **Enterprise Git Platform with Multi-Cloud Resilience**
+=== "Replication Arquitecture"
+    **REPLICATION FLOW DIAGRAM **
     
-    ```mermaid
-sequenceDiagram
-participant User as 👨‍💻 User
-participant Gitea as 🖥️ AWS Gitea
-participant RDS as 🗄️ AWS RDS<br/>(PRIMARY)
-participant VPN as 🔐 VPN Tunnel<br/>(IPsec)
-participant AzMySQL as 🗄️ Azure MySQL<br/>(REPLICA)
-participant AzGitea as 🖥️ Azure Gitea
+    ```sequenceDiagram
+    participant User as 👨‍💻 User
+    participant Gitea as 🖥️ AWS Gitea
+    participant RDS as 🗄️ AWS RDS<br/>(PRIMARY)
+    participant VPN as 🔐 VPN Tunnel<br/>(IPsec)
+    participant AzMySQL as 🗄️ Azure MySQL<br/>(REPLICA)
+    participant AzGitea as 🖥️ Azure Gitea
 
     Note over User,AzGitea: NORMAL OPERATION - Data Synchronization
 
