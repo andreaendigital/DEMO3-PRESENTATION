@@ -26,7 +26,7 @@
     
     
    ![VPN Tunnel Topology with Binlog Streaming](assets/binlog2.gif) 
-   <img src="assets/binlog2.gif" alt="Demo" width="1300">
+   <img src="assets/binlog2.gif"  width="100%">
    ![VPN Tunnel Topology with Binlog Streaming](assets/Untitled%20design.gif) 
     
 
