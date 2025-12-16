@@ -24,7 +24,7 @@
 
 === "VPN Tunnel Topology with Binlog Streaming"
        
-   ![VPN Tunnel Topology with Binlog Streaming](assets/binlog2%20(2).gif) 
+   ![VPN Tunnel Topology with Binlog Streaming](assets/binlog21.gif) 
 
 === "Network Connectivity"
     **VPN Site-to-Site IPsec**
@@ -108,7 +108,7 @@
 === "MONITORING ARQUITECTURE"
     
     
-   ![Lambda Monitoring Flow Diagram](assets/lambda.drawio.png) 
+   ![Lambda Monitoring Flow Diagram](assets/lambda2.gif) 
     
 
 !!! info ""
