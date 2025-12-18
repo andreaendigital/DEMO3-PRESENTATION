@@ -170,7 +170,6 @@
     </h2>
     </div>
 
-The solution consists of **4 independent Git repositories** working in coordination:
 
 | Repository                | Cloud | Type           | Purpose                                  |
 | ------------------------- | ----- | -------------- | ---------------------------------------- |

@@ -17,7 +17,7 @@
 
 During normal operations, the architecture runs in **hybrid cost-optimized** mode:
 
-    ![DEVOPS WORKFLOW MULTI-CLOUD](assets/normalflow.gif) 
+  ![DEVOPS WORKFLOW MULTI-CLOUD](assets/normalflow.gif) 
 
 ---
 
