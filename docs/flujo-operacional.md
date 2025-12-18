@@ -112,6 +112,21 @@ During normal operations, the architecture runs in **hybrid cost-optimized** mod
     | **REPLICA-ONLY** | MySQL only | Normal standby |
     | **FAILOVER** | VM + MySQL + LB | Disaster recovery |
 
+=== "Azure 3 Modes Pipeline"
+    **Manual Deployment (DR Only)**
+    
+    ![MODES PIPELINES](assets/modespipeline.png) 
+    
+    **Deployment Modes:**
+    
+    | Mode | Components | Use Case |
+    |------|------------|----------|
+    | **FULLSTACK** | All Infra | Normal standby |
+    | **REPLICA-ONLY** | MySQL only | Normal standby |
+    | **FAILOVER** | VM + MySQL + LB | Disaster recovery |
+
+
+
 !!! success ""
     <div align="center">
     <h2 style="color: #27AE60; font-size: 1.8em; margin: 0.5em 0; font-weight: 600;">
