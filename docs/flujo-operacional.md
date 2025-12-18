@@ -17,38 +17,7 @@
 
 During normal operations, the architecture runs in **hybrid cost-optimized** mode:
 
-```mermaid
-graph LR
-    subgraph AWS["🟠 AWS (PRODUCTION)"]
-        Users["👥 Users"] --> ALB["⚖️ ALB"]
-        ALB --> EC2["🖥️ EC2"]
-        EC2 --> RDS["🗄️ RDS MySQL<br/>(Master)"]
-        
-        Status1["✅ Users → ALB → EC2<br/>✅ RDS MySQL Active"]
-    end
-    
-    subgraph VPN["🔒 VPN Tunnel"]
-        Replication["📡 Continuous MySQL<br/>Replication<br/>(< 1 sec lag)"]
-    end
-    
-    subgraph Azure["🔵 Azure (DB ONLY - Standby)"]
-        NoVM["❌ NO VM<br/>❌ NO Load Balancer"]
-        MySQLReplica["✅ MySQL Replica<br/>(Replicating)"]
-        
-        Status2["💰 Cost Optimized<br/>🛡️ Data Ready"]
-    end
-    
-    RDS -.->|"Binlog Replication"| Replication
-    Replication -.-> MySQLReplica
-    
-    classDef aws fill:#ff9900,stroke:#232f3e,stroke-width:3px,color:#fff
-    classDef azure fill:#0078d4,stroke:#ffffff,stroke-width:3px,color:#fff
-    classDef vpn fill:#34495e,stroke:#2c3e50,stroke-width:2px,color:#fff
-    
-    class Users,ALB,EC2,RDS,Status1 aws
-    class NoVM,MySQLReplica,Status2 azure
-    class Replication vpn
-```
+    ![DEVOPS WORKFLOW MULTI-CLOUD](assets/normalflow.gif) 
 
 ---
 

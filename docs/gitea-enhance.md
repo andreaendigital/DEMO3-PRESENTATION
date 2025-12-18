@@ -112,37 +112,7 @@
     - **Operational autonomy**: Azure can operate independently if AWS fails
     - **Security**: Reduced attack surface (no cross-cloud credentials in one place)
 
-    ```mermaid
-    graph TB
-        subgraph "Multi-Cloud Jenkins Architecture"
-            subgraph AWS["☁️ AWS Cloud"]
-                JenkinsAWS["🤖 Jenkins AWS<br/>- AWS Credentials<br/>- EC2 Access<br/>- RDS Management"]
-                InfraAWS["🏗️ AWS Infrastructure<br/>- VPC, EC2, RDS<br/>- Security Groups"]
-            end
-            
-            subgraph Azure["☁️ Azure Cloud"]
-                JenkinsAZ["🤖 Jenkins Azure<br/>- Azure Credentials<br/>- VM Access<br/>- MySQL Management"]
-                InfraAZ["🏗️ Azure Infrastructure<br/>- VNet, VM, MySQL<br/>- NSG Rules"]
-            end
-            
-            Dev["👨💻 DevOps Team"]
-            
-            Dev --> JenkinsAWS
-            Dev --> JenkinsAZ
-            JenkinsAWS --> InfraAWS
-            JenkinsAZ --> InfraAZ
-            
-            InfraAWS -.->|"🔒 VPN Tunnel"| InfraAZ
-        end
-        
-        classDef aws fill:#ff9900,stroke:#232f3e,stroke-width:2px,color:#fff
-        classDef azure fill:#0078d4,stroke:#ffffff,stroke-width:2px,color:#fff
-        classDef dev fill:#2ecc71,stroke:#27ae60,stroke-width:2px,color:#fff
-        
-        class JenkinsAWS,InfraAWS aws
-        class JenkinsAZ,InfraAZ azure
-        class Dev dev
-    ```
+    ![DEVOPS WORKFLOW MULTI-CLOUD](assets/jenkins.gif) 
 
 === "Unidirectional MySQL Replication (AWS → Azure)"
     - **Context:** Define data flow between clouds
@@ -196,7 +166,7 @@
 !!! quote ""
     <div align="center">
     <h2 style="color: #E67E22; font-size: 2em; margin: 0.5em 0; font-weight: 600; letter-spacing: 1px;">
-    🌐 MULTI-CLOUD SOLUTION ARCHITECTURE
+    🌐 RESOURCES - RESUME
     </h2>
     </div>
 
@@ -209,6 +179,14 @@ The solution consists of **4 independent Git repositories** working in coordinat
 | [tf-az-infra-demoGitea](https://github.com/andreaendigital/tf-az-infra-demoGitea) | Azure | Terraform IaC  | Provisions Azure infrastructure (DR)     |
 | [ansible-az-demoGitea](https://github.com/andreaendigital/ansible-az-demoGitea)  | Azure | Ansible Config | Deploys/configures Gitea on Azure VM    |
 
+
+This project demonstrates a **fully functional multi-cloud disaster recovery architecture** with:
+
+- ✅ **4 integrated Git repositories** with Terraform + Ansible
+- ✅ **2 independent Jenkins servers** (AWS + Azure)
+- ✅ **Cross-cloud MySQL replication** (AWS RDS → Azure MySQL)
+- ✅ **Site-to-Site IPsec VPN** between clouds
+- ✅ **RTO: ~20 minutes | RPO: < 1 second**
 ---
 
 *Last Updated: {{ git_revision_date_localized }}*

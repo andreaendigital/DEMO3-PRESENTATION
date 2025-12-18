@@ -24,19 +24,6 @@ This project demonstrates a **fully functional multi-cloud disaster recovery arc
 - ✅ **Site-to-Site IPsec VPN** between clouds
 - ✅ **RTO: ~20 minutes | RPO: < 1 second**
 
-!!! info ""
-    <div align="center">
-    <h2 style="color: #9B59B6; font-size: 1.8em; margin: 0.5em 0; font-weight: 600;">
-    🛠️ TECHNOLOGY STACK
-    </h2>
-    </div>
-
-- **Infrastructure**: Terraform (AWS + Azure)
-- **Configuration**: Ansible (automation)
-- **CI/CD**: Jenkins (independent pipelines)
-- **Database**: MySQL 8.0 (binlog replication)
-- **Network**: VPN IPsec (secure communication)
-
 
 
 !!! example ""
