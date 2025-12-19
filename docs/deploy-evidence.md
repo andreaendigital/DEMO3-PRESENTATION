@@ -41,3 +41,17 @@
     AZURE DEPLOY
     </h2>
     </div>    
+
+
+
+!!! info ""
+    <div align="center">
+    <h2 style="color: #3498DB; font-size: 1.8em; margin: 0.5em 0; font-weight: 600;">
+    BLOCK: 
+    </h2>
+    </div>        
+
+
+=== "FREE TIER ERROR"    
+
+    ![DEPLOY ERROR](assets/FREETIERERROR.png) 

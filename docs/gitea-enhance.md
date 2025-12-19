@@ -113,47 +113,18 @@
 
     ![DEVOPS WORKFLOW MULTI-CLOUD](assets/jenkins.gif) 
 
-=== "Unidirectional MySQL Replication (AWS → Azure)"
-    - **Context:** Define data flow between clouds
-    - **Decision:** Unidirectional master-slave replication from AWS (Master) to Azure (Replica)
-    - **Simplicity**: Avoids bidirectional synchronization conflicts
-    - **Clear role**: AWS is PRIMARY, Azure is DR
-    - **Split-brain prevention**: No simultaneous writes in both clouds
 
-    **Replication flow:**
 
-    ```mermaid
-    graph LR
-        UserOp["👤 User Operation<br/>INSERT/UPDATE/DELETE"] --> RDSMaster["🗄️ RDS MySQL (Master)<br/>AWS Cloud"]
-        RDSMaster --> Transmission["📝 Data Transmission<br/>Through VPN"]
-        Transmission --> MySQLReplica["🗄️ MySQL Replica<br/>Azure Cloud"]
-        MySQLReplica --> ProcessThread["🔄 Process & Apply<br/>Events"]
-        ProcessThread --> Active["✅ REPLICATION ACTIVE<br/>Lag: < 1 second"]
-        
-        classDef aws fill:#ff9900,stroke:#232f3e,stroke-width:2px,color:#fff
-        classDef azure fill:#0078d4,stroke:#ffffff,stroke-width:2px,color:#fff
-        classDef process fill:#9b59b6,stroke:#8e44ad,stroke-width:2px,color:#fff
-        classDef success fill:#27ae60,stroke:#229954,stroke-width:2px,color:#fff
-        
-        class RDSMaster aws
-        class MySQLReplica azure
-        class UserOp,Binlog,Transmission,IOThread,SQLThread process
-        class Active success
-    ```
-=== "AWS Free Tier Limitations"
+=== "Free Tier Limitations"
+    **AWS:**
     **Issue:** Free Tier blocks `backup_retention_period >= 1` required for binlog
     
-    **Solutions Tested:**
-    
-    | Solution | Result |
-    |----------|--------|
-    | RDS with backup_retention=1 | ❌ Free Tier restriction |
-    | Manual MySQL on EC2 | ⚠️ Works, loses RDS benefits |
-    | Upgrade to db.t3.small | ✅ Works, +$30/month |
+
+    **AZURE:**
+    **Issue:** Free Tier 3 IP Limit  
     
     **Resolution:**
-    - **Production**: RDS paid tier for full features
-    - **Demo**: EC2 MySQL for cost optimization
+
 
 
 === "SSH Jump Host (Bastion) Architecture"
