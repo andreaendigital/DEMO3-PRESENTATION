@@ -78,24 +78,9 @@ markdown_extensions:
       custom_checkbox: true
 
 nav:
-  - Home: index.md
+  
   - GITeaEnhance: gitea-enhance.md
-  - Flujo Operacional: flujo-operacional.md
+  - Normal Operational Flow: flujo-operacional.md
   - Disaster Recovery: disaster-recovery.md
-  - Resumen Ejecutivo: resumen-ejecutivo.md
-  - Resources:
-    - AWS Infrastructure:
-      - Overview: recursos/tf-infra-demogitea/README.md
-      - Replication Setup: recursos/tf-infra-demogitea/REPLICATION_SETUP.md
-    - AWS Configuration:
-      - Overview: recursos/ansible-demogitea/README.md
-      - Auto Configuration: recursos/ansible-demogitea/CONFIGURACION_AUTOMATICA.md
-    - Azure Infrastructure:
-      - Overview: recursos/tf-az-infra-demogitea/README.md
-      - Failover Architecture: recursos/tf-az-infra-demogitea/FAILOVER_ARCHITECTURE.md
-      - Jenkins Setup: recursos/tf-az-infra-demogitea/JENKINS_SETUP.md
-      - Repository Relationships: recursos/tf-az-infra-demogitea/REPOSITORY_RELATIONSHIPS.md
-    - Azure Configuration:
-      - Overview: recursos/ansible-az-demogitea/README.md
-
+  
 copyright: Copyright &copy; 2025 Andrea - DEMO3 Presentation
