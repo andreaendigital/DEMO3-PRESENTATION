@@ -126,43 +126,7 @@
 
 
 
----
 
-!!! example ""
-    <div align="center">
-    <h2 style="color: #9B59B6; font-size: 1.8em; margin: 0.5em 0; font-weight: 600;">
-    🛠️ TECHNICAL CHALLENGES
-    </h2>
-    </div>
-
-=== "💰 Challenge 1: AWS Free Tier Limitations"
-    **Issue:** Free Tier blocks `backup_retention_period >= 1` required for binlog
-    
-    **Solutions Tested:**
-    
-    | Solution | Result |
-    |----------|--------|
-    | RDS with backup_retention=1 | ❌ Free Tier restriction |
-    | Manual MySQL on EC2 | ⚠️ Works, loses RDS benefits |
-    | Upgrade to db.t3.small | ✅ Works, +$30/month |
-    
-    **Resolution:**
-    - **Production**: RDS paid tier for full features
-    - **Demo**: EC2 MySQL for cost optimization
-
-=== "🔐 Challenge 2: SSH ProxyJump Configuration"
-    **Issue:** Private MySQL VM requires proxy access for Ansible
-    
-    **Architecture:**
-    ```
-    Jenkins → Gitea VM (Public IP) → MySQL VM (Private IP)
-    ```
-    
-    **Solution:**
-    ```ini
-    [azure:vars]
-    ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p azureuser@<PUBLIC_IP>"'
-    ```
 
 
 

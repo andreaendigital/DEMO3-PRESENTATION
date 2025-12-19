@@ -90,7 +90,7 @@ During normal operations, the architecture runs in **hybrid cost-optimized** mod
     4. **Success** - Service available via ALB
 
 === "Azure Pipeline"
-    **Manual Deployment (DR Only)**
+
     
     ```mermaid
     flowchart LR
@@ -114,7 +114,7 @@ During normal operations, the architecture runs in **hybrid cost-optimized** mod
     | **FAILOVER** | VM + MySQL + LB | Disaster recovery |
 
 === "Azure 3 Modes Pipeline"
-    **Manual Deployment (DR Only)**
+   
     
     ![MODES PIPELINES](assets/deploymentmodes.gif) 
 

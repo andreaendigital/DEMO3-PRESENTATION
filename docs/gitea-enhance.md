@@ -23,7 +23,7 @@
 === "Solution Overview"
     **Enterprise Git Platform with Multi-Cloud Resilience**
 
-    🎯 **SLA Compliance**: 99.9% Uptime Target | 🛡️ **Data Integrity**: RPO < 15 seconds | ⚡ **Business Continuity**: RTO < 3 minutes
+    🎯 **SLA Compliance**: 99.9% Uptime Target | 🛡️ **Data Integrity**: RPO < 15 seconds | ⚡ **Business Continuity**: RTO < 20 minutes
     
     **Enterprise Value:** Production-ready multi-cloud infrastructure with enterprise-grade disaster recovery and automated failover capabilities.
 
@@ -43,7 +43,7 @@
     | 🔒 **Network** | IPsec VPN | Site-to-Site encrypted tunnel | Cross-Cloud |
     | 🖥️ **Compute** | EC2 + Azure VM | t3.small + Standard_DC1ds_v3 | Multi-Cloud |
     
-    **Architecture**: 4 independent Git repositories working in coordination
+
 
 === "Key Benefits"
     **Enterprise-Grade Multi-Cloud Capabilities**
@@ -57,8 +57,7 @@
     | 📦 **Independent Deployment** | 4 coordinated Git repositories | Modular, maintainable architecture |
     | ⚡ **Modern DevOps** | CI/CD with Jenkins per cloud | Automated build and deployment |
     
-    **Demo Value**: Production-ready architecture patterns
-
+   
 === "Disaster Recovery Process"
     **Manual Failover Flow**
     
@@ -76,7 +75,7 @@
         class C,D manual
     ```
     
-    **Results**: RTO ~20 minutes | RPO < 1 second | MySQL binlog replication
+    **Results**: RTO ~20 minutes | RPO < 15 second | MySQL binlog replication
 
 !!! tip ""
     <div align="center">
@@ -141,6 +140,21 @@
         class UserOp,Binlog,Transmission,IOThread,SQLThread process
         class Active success
     ```
+=== "AWS Free Tier Limitations"
+    **Issue:** Free Tier blocks `backup_retention_period >= 1` required for binlog
+    
+    **Solutions Tested:**
+    
+    | Solution | Result |
+    |----------|--------|
+    | RDS with backup_retention=1 | ❌ Free Tier restriction |
+    | Manual MySQL on EC2 | ⚠️ Works, loses RDS benefits |
+    | Upgrade to db.t3.small | ✅ Works, +$30/month |
+    
+    **Resolution:**
+    - **Production**: RDS paid tier for full features
+    - **Demo**: EC2 MySQL for cost optimization
+
 
 === "SSH Jump Host (Bastion) Architecture"
     - **Context:** MySQL database security requirements in Azure cloud
