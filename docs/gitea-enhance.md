@@ -119,6 +119,7 @@
     **AWS:**
     **Issue:** Free Tier blocks `backup_retention_period >= 1` required for binlog
     
+    ![FREE TIER ERROR](assets/FREETIERERROR.png) 
 
     **AZURE:**
     **Issue:** Free Tier 3 IP Limit  
