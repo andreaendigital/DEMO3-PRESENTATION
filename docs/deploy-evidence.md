@@ -12,17 +12,24 @@
     </h2>
     </div>
 
+
+=== "GITEA HOME"
+   
     ![IP SCREENSHOT](assets/ip1.png) 
-    
-    ![GITEA HOME SCREENSHOT](assetS/HOME1.png) 
-    
+     
     ![GITEA SCREENSHOT](assets/HOME1.png) 
 
+=== "ACCOUNT LOGIN VERIFICATION"
+
     ![GITEA SCREENSHOT](assets/SCREEN1.png) 
+
+=== "CREATE ORGANIZATION AND REPOSITORY"    
 
     ![GITEA SCREENSHOT](assets/SCREEN2.png) 
 
     ![GITEA SCREENSHOT](assets/SCREEN3.png) 
+
+=== "ENABLED REPOSITORY"    
 
     ![GITEA SCREENSHOT](assets/SCREEN4.png) 
 
