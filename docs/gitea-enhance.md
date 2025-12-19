@@ -130,21 +130,15 @@
 === "SSH Jump Host (Bastion) Architecture"
     - **Context:** MySQL database security requirements in Azure cloud
     - **Decision:** Deploy MySQL VM without public IP, accessible only via SSH ProxyJump through Gitea VM
-    - **Security**: MySQL not exposed to Internet
+    - **Security**: MySQL not exposed to Internet. Single entry point through hardened jump host  
     - **Cost optimization**: No additional public IP consumption
-    - **Compliance**: Enhanced security posture for audits
+    - **Compliance**: Meets enterprise security standards for database access
     - **Trade-off**: Ansible requires ProxyCommand configuration
 
-    **Access Architecture:**
 
     ![Platform with Multi-Cloud Resilience](assets/bastion3.gif) 
     
-    **Security Benefits:**
-    
-    ✅ **Zero Internet Exposure**: MySQL VM completely isolated from public access  
-    ✅ **Controlled Access Point**: Single entry point through hardened jump host  
-    ✅ **Cost Efficient**: Saves additional public IP allocation costs  
-    ✅ **Audit Compliance**: Meets enterprise security standards for database access
+
 
 ---
 
