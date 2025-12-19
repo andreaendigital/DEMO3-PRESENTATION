@@ -109,21 +109,23 @@ During normal operations, the architecture runs in **hybrid cost-optimized** mod
     
     | Mode | Components | Use Case |
     |------|------------|----------|
+    | **FULLSTACK** | All Infra | Normal standby |
     | **REPLICA-ONLY** | MySQL only | Normal standby |
     | **FAILOVER** | VM + MySQL + LB | Disaster recovery |
 
 === "Azure 3 Modes Pipeline"
     **Manual Deployment (DR Only)**
     
-    ![MODES PIPELINES](assets/modespipeline.png) 
+    ![MODES PIPELINES](assets/deploymentmodes.gif) 
+
+
+=== "Azure - Jenkins Interface"
+        
+    ![INTERFACE AZURE PIPELINE](assets/modespipeline.png) 
     
-    **Deployment Modes:**
+
     
-    | Mode | Components | Use Case |
-    |------|------------|----------|
-    | **FULLSTACK** | All Infra | Normal standby |
-    | **REPLICA-ONLY** | MySQL only | Normal standby |
-    | **FAILOVER** | VM + MySQL + LB | Disaster recovery |
+
 
 
 
