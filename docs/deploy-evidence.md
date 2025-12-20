@@ -12,6 +12,27 @@
     </h2>
     </div>
 
+=== "GITEA HOME"
+   
+        
+    ![GITEA SCREENSHOT](assets/giteaAWS.jpeg) 
+
+=== "USER PROFILE"
+
+    ![GITEA SCREENSHOT](assets/profileaws.jpeg) 
+
+
+=== "ENABLED REPOSITORY"    
+
+    ![GITEA SCREENSHOT](assets/repoaws.jpeg) 
+
+
+!!! info ""
+    <div align="center">
+    <h2 style="color: #3498DB; font-size: 1.8em; margin: 0.5em 0; font-weight: 600;">
+    AZURE DEPLOY
+    </h2>
+    </div>    
 
 === "GITEA HOME"
    
@@ -33,17 +54,6 @@
 
     ![GITEA SCREENSHOT](assets/SCREEN4.png) 
 
-
-
-!!! info ""
-    <div align="center">
-    <h2 style="color: #3498DB; font-size: 1.8em; margin: 0.5em 0; font-weight: 600;">
-    AZURE DEPLOY
-    </h2>
-    </div>    
-
-
-
 !!! info ""
     <div align="center">
     <h2 style="color: #3498DB; font-size: 1.8em; margin: 0.5em 0; font-weight: 600;">
@@ -55,3 +65,28 @@
 === "FREE TIER ERROR"    
 
     ![DEPLOY ERROR](assets/FREETIERERROR.png) 
+
+
+
+!!! info ""
+    <div align="center">
+    <h2 style="color: #3498DB; font-size: 1.8em; margin: 0.5em 0; font-weight: 600;">
+    avances: 
+    </h2>
+    </div>      
+
+    === "BINLOG "    
+
+        ![BINLOG SCREENSHOT](assets/binlogaws.png) 
+
+    === "MASTER STATUS EVIDENCE FROM AWS"    
+
+        ![MASTER STATUS](assets/masterstatus.png)     
+
+- **Sync Point Identification:** The SHOW MASTER STATUS command provides the exact File and Position coordinates. This metadata is essential for the replica to know exactly where to begin data ingestion without gaps or overlaps.
+
+- **Security & Permissions:** A dedicated user (repl_azure) is configured with the REPLICATION SLAVE privilege. Following the principle of least privilege, we avoid using the 'root' account for external cloud connections.
+
+- **Binary Log Tracking:** The transition from file ...000060 to ...000061 confirms that the database is actively recording traceable events. These logs are the "source of truth" that will be streamed to the Azure replica.
+
+- **Data Consistency:** Using FLUSH PRIVILEGES forces the server to reload grant tables into memory immediately. This prevents connection failures during the initial handshake between the on-premise master and the Azure environment.
