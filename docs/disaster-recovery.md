@@ -100,7 +100,7 @@
 !!! info ""
     <div align="center">
     <h2 style="color: #3498DB; font-size: 1.8em; margin: 0.5em 0; font-weight: 600;">
-    🔧 Fall Detection and Alert Activation
+    🔧 Fail Detection and Alert Activation
     </h2>
     </div>
 
