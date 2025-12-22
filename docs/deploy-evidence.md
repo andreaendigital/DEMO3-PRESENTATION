@@ -75,24 +75,23 @@
     </h2>
     </div>      
 
- === "BINLOG "    
+    === "BINLOG "    
 
-        ![BINLOG SCREENSHOT](assets/binlogaws.png) 
+       ![BINLOG SCREENSHOT](assets/binlogaws.png) 
 
-=== "MASTER STATUS EVIDENCE FROM AWS"    
+    === "MASTER STATUS EVIDENCE FROM AWS"    
 
         ![MASTER STATUS](assets/masterstatus.png)     
 
-=== "MESSAGES TEST AWS TO AZURE"    
+    === "MESSAGES TEST AWS TO AZURE"    
+        ![MESSAGES TEST](assets/MESSAGESTEXT.png)    
 
-        ![MASTER STATUS](assets/MESSAGESTEXT.png)    
-
-=== "Pipeline #48 confirmed Replica"    
+    === "Pipeline #48 confirmed Replica"    
 
         ![Pipeline #48 confirmed Replica](assets/PIPELINECONFIRMATION1.png)   
         ![Pipeline #48 confirmed Replica](assets/PIPELINECONFIRMATION2.png)   
 
-=== "VPN TUNNEL DETAILS"    
+    === "VPN TUNNEL DETAILS"    
 
         ![Pipeline #48 confirmed Replica](assets/TUNNELDETAILS1.png)   
         ![Pipeline #48 confirmed Replica](assets/TUNNELDETAILS2.png)
