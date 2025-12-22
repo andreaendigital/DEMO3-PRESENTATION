@@ -71,17 +71,33 @@
 !!! info ""
     <div align="center">
     <h2 style="color: #3498DB; font-size: 1.8em; margin: 0.5em 0; font-weight: 600;">
-    avances: 
+    PROGRESS AFTER BLOCKS
     </h2>
     </div>      
 
-    === "BINLOG "    
+ === "BINLOG "    
 
         ![BINLOG SCREENSHOT](assets/binlogaws.png) 
 
-    === "MASTER STATUS EVIDENCE FROM AWS"    
+=== "MASTER STATUS EVIDENCE FROM AWS"    
 
         ![MASTER STATUS](assets/masterstatus.png)     
+
+=== "MESSAGES TEST AWS TO AZURE"    
+
+        ![MASTER STATUS](assets/MESSAGESTEXT.png)    
+
+=== "Pipeline #48 confirmed Replica"    
+
+        ![Pipeline #48 confirmed Replica](assets/PIPELINECONFIRMATION1.png)   
+        ![Pipeline #48 confirmed Replica](assets/PIPELINECONFIRMATION2.png)   
+
+=== "VPN TUNNEL DETAILS"    
+
+        ![Pipeline #48 confirmed Replica](assets/TUNNELDETAILS1.png)   
+        ![Pipeline #48 confirmed Replica](assets/TUNNELDETAILS2.png)
+
+
 
 - **Sync Point Identification:** The SHOW MASTER STATUS command provides the exact File and Position coordinates. This metadata is essential for the replica to know exactly where to begin data ingestion without gaps or overlaps.
 
