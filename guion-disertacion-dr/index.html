@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Professional Presentation Documentation" name="description"/>
+<meta content="Andrea" name="author"/>
+<link href="https://andreaendigital.github.io/DEMO3-PRESENTATION/guion-disertacion-dr/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
+<title>Guión de Disertación: Disaster Recovery Multi-Cloud - DEMO3 Presentation</title>
+<link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="cyan" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#guion-de-disertacion-disaster-recovery-multi-cloud">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="DEMO3 Presentation" class="md-header__button md-logo" data-md-component="logo" href=".." title="DEMO3 Presentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DEMO3 Presentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Guión de Disertación: Disaster Recovery Multi-Cloud
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="cyan" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="cyan" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/andreaendigital/DEMO3-PRESENTATION" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    andreaendigital/DEMO3-PRESENTATION
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../gitea-enhance/">
+        
+  
+  
+    
+  
+  GITeaEnhance
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../flujo-operacional/">
+        
+  
+  
+    
+  
+  Normal Operational Flow
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../disaster-recovery/">
+        
+  
+  
+    
+  
+  Disaster Recovery
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../deploy-evidence/">
+        
+  
+  
+    
+  
+  Deploy Evidence
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DEMO3 Presentation" class="md-nav__button md-logo" data-md-component="logo" href=".." title="DEMO3 Presentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    DEMO3 Presentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/andreaendigital/DEMO3-PRESENTATION" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    andreaendigital/DEMO3-PRESENTATION
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../gitea-enhance/">
+<span class="md-ellipsis">
+    
+  
+    GITeaEnhance
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../flujo-operacional/">
+<span class="md-ellipsis">
+    
+  
+    Normal Operational Flow
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../disaster-recovery/">
+<span class="md-ellipsis">
+    
+  
+    Disaster Recovery
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../deploy-evidence/">
+<span class="md-ellipsis">
+    
+  
+    Deploy Evidence
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/andreaendigital/DEMO3-PRESENTATION/edit/master/docs/guion-disertacion-dr.md" rel="edit" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/andreaendigital/DEMO3-PRESENTATION/raw/master/docs/guion-disertacion-dr.md" title="View source of this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="guion-de-disertacion-disaster-recovery-multi-cloud">Guión de Disertación: Disaster Recovery Multi-Cloud</h1>
+<h2 id="introduccion-2-3-minutos">Introducción (2-3 minutos)</h2>
+<p>Buenos días. Hoy voy a presentarles un sistema de disaster recovery que desarrollamos para garantizar la continuidad operacional de nuestro servicio Git corporativo Gitea, implementado mediante una arquitectura multi-cloud entre AWS y Azure.</p>
+<p>El desafío que enfrentamos era claro: ¿Cómo garantizamos que nuestro servicio de control de versiones crítico permanezca disponible incluso ante una caída completa de la región primaria de AWS? La respuesta nos llevó a diseñar una arquitectura de alta disponibilidad con un objetivo de tiempo de recuperación de 20 minutos y una pérdida de datos inferior a 1 segundo.</p>
+<p>Permítanme guiarlos a través de tres aspectos fundamentales: primero, cómo construimos la infraestructura de replicación; segundo, cómo detectamos y respondemos ante una caída; y tercero, cómo ejecutamos el proceso de recuperación.</p>
+<hr/>
+<h2 id="parte-1-construccion-de-la-infraestructura-de-replicacion-5-7-minutos">Parte 1: Construcción de la Infraestructura de Replicación (5-7 minutos)</h2>
+<h3 id="la-arquitectura-base">La Arquitectura Base</h3>
+<p>Nuestra arquitectura se fundamenta en el principio de redundancia geográfica. Tenemos dos regiones cloud completamente independientes: AWS us-east-1 como sitio primario y Azure East US como sitio de disaster recovery. Pero aquí está la innovación: no mantenemos una réplica completa activa en Azure. Eso sería prohibitivamente costoso. En su lugar, implementamos lo que llamamos una arquitectura "cost-optimized standby".</p>
+<p>En operación normal, Azure solamente mantiene activa la base de datos MySQL en modo réplica, consumiendo aproximadamente 25 dólares mensuales. No hay máquinas virtuales. No hay balanceadores de carga. Solo los datos, manteniéndose sincronizados en tiempo real. Esto reduce nuestros costos operacionales del disaster recovery en un 75% comparado con una réplica activa-activa tradicional.</p>
+<h3 id="el-tunel-vpn-la-columna-vertebral-de-la-replicacion">El Túnel VPN: La Columna Vertebral de la Replicación</h3>
+<p>Para que los datos fluyan entre AWS y Azure, necesitábamos un canal de comunicación seguro y confiable. Aquí es donde entra el concepto de VPN Site-to-Site con IPsec. Este no es un simple túnel VPN como el que usarías en tu laptop. Es una conexión permanente de nivel empresarial que establece un enlace cifrado entre dos Virtual Private Clouds en diferentes proveedores.</p>
+<p>La implementación técnica requirió varios componentes críticos. Primero, en AWS desplegamos un Virtual Private Gateway, que actúa como el punto de terminación del túnel desde el lado de AWS. Este gateway se conecta a nuestra VPC donde reside el RDS MySQL. En Azure, implementamos un Virtual Network Gateway de tipo VPN, que cumple la función equivalente del lado de Azure.</p>
+<p>La configuración de seguridad es donde la complejidad se manifiesta. Utilizamos el protocolo IKEv2 para el intercambio de claves, con cifrado AES-256 para el tráfico de datos y SHA-256 para la autenticación de integridad. Implementamos Perfect Forward Secrecy mediante Diffie-Hellman grupo 14, lo que significa que incluso si una clave de sesión se compromete, las sesiones anteriores permanecen seguras.</p>
+<p>Pero hay un detalle arquitectónico crítico: configuramos el túnel en modo activo-pasivo con dos túneles redundantes. ¿Por qué dos? Porque los servicios cloud pueden reiniciar o hacer mantenimiento en el endpoint del túnel sin previo aviso. Con dos túneles, si uno cae, el otro mantiene la conectividad sin interrupción en la replicación de datos.</p>
+<h3 id="replicacion-mysql-el-corazon-del-sistema">Replicación MySQL: El Corazón del Sistema</h3>
+<p>Ahora, la replicación de base de datos es donde todo cobra vida. Implementamos MySQL 8.0 con replicación binlog asíncrona en formato ROW. Permítanme explicar por qué cada una de estas decisiones técnicas es importante.</p>
+<p>El binlog o binary log es el mecanismo nativo de MySQL para capturar todos los cambios que ocurren en la base de datos. Cada INSERT, UPDATE, DELETE queda registrado en este log de manera secuencial. Pero hay diferentes formatos de binlog. Elegimos el formato ROW porque captura exactamente qué filas fueron modificadas y con qué valores. Esto es superior al formato STATEMENT, que solo registra el SQL ejecutado, porque el formato ROW garantiza consistencia incluso cuando hay funciones no determinísticas o diferencias de configuración entre servidores.</p>
+<p>La replicación funciona con una arquitectura maestro-esclavo. El servidor en AWS es el maestro con server-id 1, configurado con log_bin habilitado para generar el binlog. El servidor en Azure es la réplica con server-id 2, configurado con relay_log para recibir y aplicar los cambios.</p>
+<p>Aquí está lo fascinante del proceso técnico: en AWS configuramos un usuario específico de replicación con privilegios REPLICATION SLAVE. Este usuario se conecta desde Azure a través del túnel VPN cifrado. La réplica de Azure mantiene dos threads críticos: el IO thread que lee los eventos del binlog del maestro y los escribe en el relay log local, y el SQL thread que lee del relay log y ejecuta las transacciones en la base de datos local.</p>
+<p>El lag de replicación, ese delta de tiempo entre cuando ocurre un cambio en AWS y cuando se aplica en Azure, es típicamente menor a 1 segundo. Esto lo logramos mediante varios factores: el ancho de banda dedicado del túnel VPN, la baja latencia entre regiones de AWS y Azure en la costa este, y la configuración de semi-sync replication en operaciones críticas.</p>
+<p>Pero hay un aspecto operacional importante: durante la operación normal, la base de datos de Azure está en modo read-only para prevenir cualquier escritura accidental que rompería la replicación. Sin embargo, y esto es crucial para el failover, Azure MySQL Flexible Server no está realmente en modo read-only estricto. Puede convertirse en maestro simplemente deteniendo la replicación, sin necesidad de cambios de configuración adicionales.</p>
+<hr/>
+<h2 id="parte-2-deteccion-de-caidas-y-activacion-de-alertas-3-4-minutos">Parte 2: Detección de Caídas y Activación de Alertas (3-4 minutos)</h2>
+<h3 id="monitoreo-multi-capa">Monitoreo Multi-Capa</h3>
+<p>La detección temprana de fallos es fundamental para cumplir nuestro objetivo de RTO de 20 minutos. Implementamos un sistema de monitoreo en tres capas que opera bajo el principio de "defense in depth".</p>
+<p>La primera capa es el health check del Application Load Balancer de AWS. Cada 30 segundos, el ALB envía una petición HTTP al endpoint de salud de Gitea. Si tres intentos consecutivos fallan, el ALB marca el target como unhealthy. Pero aquí está el problema: si falla toda la región de AWS, el ALB mismo está caído, por lo que no puede alertarnos.</p>
+<p>La segunda capa es CloudWatch con métricas sintéticas. Tenemos un Lambda function que se ejecuta cada minuto desde una región diferente de AWS, intentando acceder al servicio. Esta Lambda está en us-west-2, geográficamente separada de nuestra producción en us-east-1. Si detecta fallo, CloudWatch Alarm se dispara inmediatamente.</p>
+<p>La tercera capa, y quizás la más crítica, es el monitoreo externo mediante UptimeRobot o similar. Este servicio SaaS monitorea desde múltiples ubicaciones geográficas globales, completamente fuera de AWS. Es nuestra última línea de defensa para detectar una caída regional completa.</p>
+<h3 id="cascada-de-notificaciones">Cascada de Notificaciones</h3>
+<p>Cuando se detecta una caída potencial, se activa una cascada de notificaciones diseñada para escalar apropiadamente. El primer nivel son notificaciones automatizadas por Slack al canal de incident-response. Estas notificaciones incluyen el timestamp exacto, el tipo de fallo detectado, y enlaces directos a los dashboards relevantes.</p>
+<p>Simultáneamente, se envían emails al equipo de guardia. Pero no solo un email genérico. El sistema envía un análisis preliminar: si solo el ALB health check falló pero CloudWatch desde otra región responde, probablemente es un problema de aplicación, no de región. Si ambos fallan, es probable un problema de región.</p>
+<p>El tercer nivel, si no hay respuesta humana en 5 minutos, es una llamada telefónica automatizada. Esto puede parecer antiguo, pero en el caos de un incidente mayor donde múltiples sistemas pueden estar alertando, una llamada telefónica corta el ruido.</p>
+<h3 id="analisis-y-decision">Análisis y Decisión</h3>
+<p>Lo crucial aquí es entender que no todo fallo amerita un failover a Azure. El failover es una operación costosa y compleja que cambia fundamentalmente dónde está nuestra fuente de verdad de datos. Por eso, el equipo de guardia debe ejecutar un análisis rápido de 2 minutos para confirmar:</p>
+<p>¿Es realmente una caída de región o solo un problema de aplicación? Verificamos AWS Service Health Dashboard. Si AWS reporta problemas regionales en us-east-1, especialmente en EC2 o RDS, eso confirma la hipótesis.</p>
+<p>¿Está Azure funcionando correctamente? Verificamos que la réplica de MySQL en Azure está respondiendo y que su replication lag es normal. No tiene sentido hacer failover a un sitio que también tiene problemas.</p>
+<p>¿Cuál es el impacto en negocio? Si es 3 AM y hay cero usuarios conectados, podríamos esperar 30 minutos para ver si AWS se recupera. Si es medio día con 500 desarrolladores intentando hacer push de código, el failover es inmediato.</p>
+<hr/>
+<h2 id="parte-3-ejecucion-del-recovery-5-7-minutos">Parte 3: Ejecución del Recovery (5-7 minutos)</h2>
+<h3 id="fase-de-deployment-jenkins-como-orquestador">Fase de Deployment: Jenkins como Orquestador</h3>
+<p>Una vez tomada la decisión de hacer failover, el proceso de recovery se ejecuta mediante Jenkins, nuestra plataforma de CI/CD que actúa como orquestador central. Este detalle es fundamental: no ejecutamos scripts manualmente. Todo está codificado en un Jenkinsfile que garantiza consistencia y auditabilidad.</p>
+<p>El operador de guardia accede al Jenkins master, navega al pipeline llamado "Azure-Gitea-Deployment" y lo dispara con parámetros específicos. Los parámetros son críticos aquí. Configuramos DEPLOYMENT_MODE en FAILOVER, no FULL_STACK. Esta distinción le dice a Jenkins que la base de datos ya existe y no debe intentar crearla.</p>
+<p>Establecemos PLAN_TERRAFORM en true, APPLY_TERRAFORM en true, y DEPLOY_ANSIBLE en true. Esta combinación significa: primero verifica qué va a crear Terraform, luego créalo, y finalmente configura la aplicación con Ansible.</p>
+<h3 id="terraform-infraestructura-como-codigo">Terraform: Infraestructura como Código</h3>
+<p>Cuando Jenkins ejecuta Terraform, está materializando infraestructura descrita como código en archivos HCL. En aproximadamente 7 a 10 minutos, Terraform crea varios recursos en Azure:</p>
+<p>Primero, una máquina virtual Standard_B2s con 2 vCPUs y 4 GB de RAM, suficiente para correr Gitea con carga moderada. Esta VM se despliega en la subnet privada donde ya existe nuestra base de datos MySQL.</p>
+<p>Segundo, un Azure Load Balancer de tipo Standard, que será el nuevo punto de entrada público para los usuarios. El load balancer recibe una IP pública estática que eventualmente reemplazará el DNS del servicio.</p>
+<p>Tercero, interfaces de red, security groups configurados para permitir tráfico SSH desde rangos específicos y tráfico HTTP/HTTPS desde internet, y discos managed con cifrado habilitado por defecto.</p>
+<p>Lo elegante de Terraform aquí es que todo es idempotente. Si el pipeline falla a mitad de camino y necesitamos re-ejecutarlo, Terraform entiende qué recursos ya existen y solo crea lo faltante. Esto es crucial en un escenario de alta presión.</p>
+<p>Al finalizar, Terraform genera outputs: la IP privada de la VM, la IP pública del load balancer, y otros datos que necesitamos para la siguiente fase.</p>
+<h3 id="ansible-configuracion-automatizada">Ansible: Configuración Automatizada</h3>
+<p>Con la infraestructura creada, Jenkins automáticamente procede a la fase de configuración con Ansible. Este es un momento crítico: tenemos máquinas virtuales vacías que necesitan convertirse en servidores funcionales de Gitea en menos de 5 minutos.</p>
+<p>Jenkins toma los outputs de Terraform y genera dinámicamente un archivo de inventario de Ansible. Este inventario especifica las IPs de las máquinas target y las credenciales SSH necesarias. Aquí encontramos un desafío técnico interesante: la VM de Gitea está en subnet privada sin IP pública directa. Ansible necesita conectarse a través de un jump host o bastion.</p>
+<p>La solución que implementamos es ProxyJump en la configuración SSH de Ansible. Le decimos a Ansible: para conectarte a la VM de Gitea en 10.1.2.x, primero SSH al bastion en la IP pública, y desde ahí salta a la VM privada. Esto se logra con un simple parámetro ansible_ssh_common_args.</p>
+<p>El playbook de Ansible ejecuta varias tareas secuenciales. Primero, instala dependencias del sistema: git, build-essential, y otras herramientas. Luego descarga el binario precompilado de Gitea versión 1.21.5 desde el repositorio oficial de GitHub.</p>
+<p>La configuración crítica está en el archivo app.ini de Gitea. Ansible usa un template Jinja2 que inserta variables específicas del ambiente de Azure. La sección de base de datos es particularmente importante: especificamos el hostname del MySQL de Azure, el puerto 3306, y las credenciales. Utilizamos Ansible Vault para cifrar estas credenciales en el repositorio Git.</p>
+<p>Ansible también configura Gitea como un systemd service, asegurando que se inicie automáticamente si la VM se reinicia. Habilita el servicio, lo inicia, y luego ejecuta una verificación de salud simple: intenta hacer un HTTP GET al localhost:3000 para confirmar que Gitea responde.</p>
+<h3 id="promocion-de-base-de-datos-el-momento-critico">Promoción de Base de Datos: El Momento Crítico</h3>
+<p>Con la aplicación desplegada, llegamos al paso más delicado del failover: promover la réplica de MySQL a maestro. Este es un momento de no-retorno. Una vez que hacemos esto, Azure MySQL deja de ser réplica y se convierte en la fuente autoritativa de datos.</p>
+<p>El operador se conecta vía SSH a la VM de Gitea o utiliza un cliente MySQL directo para conectarse al MySQL Flexible Server de Azure. Ejecuta dos comandos SQL simples pero poderosos: STOP REPLICA para detener los threads de replicación, y RESET REPLICA ALL para eliminar completamente la configuración de replicación y las coordenadas del binlog del maestro antiguo.</p>
+<p>Es importante entender que Azure MySQL Flexible Server, a diferencia de implementaciones tradicionales de réplicas, no está en modo read_only estricto. Esto significa que no necesitamos ejecutar comandos adicionales para hacerlo escribible. Simplemente dejamos de replicar y automáticamente puede aceptar escrituras.</p>
+<p>Verificamos con SHOW MASTER STATUS que la base de datos ahora está generando su propio binlog. Esto es importante porque si algún día queremos hacer failback a AWS, necesitamos este binlog para sincronizar datos en dirección inversa.</p>
+<h3 id="validacion-y-activacion">Validación y Activación</h3>
+<p>Los últimos minutos del proceso son de validación exhaustiva antes de declarar el recovery exitoso. Primero, verificamos que Gitea está accesible a través de la IP del load balancer de Azure. Hacemos un git clone de un repositorio de prueba para confirmar que las operaciones de lectura funcionan.</p>
+<p>Luego, ejecutamos una operación de escritura: creamos un nuevo repositorio de prueba o hacemos un push de un commit. Esto confirma que la base de datos está aceptando escrituras y que la integración entre Gitea y MySQL funciona correctamente.</p>
+<p>Finalmente, actualizamos el DNS. Si estamos usando AWS Route 53 o cualquier otro proveedor de DNS, cambiamos el registro A de gitea.company.com para que apunte a la nueva IP pública del load balancer de Azure en lugar del ALB de AWS. Este cambio de DNS puede tomar de 5 a 60 minutos en propagarse globalmente, dependiendo de nuestros TTL configurados.</p>
+<p>Durante esta ventana de propagación de DNS, tendremos usuarios llegando tanto al sitio viejo (AWS caído) como al nuevo (Azure funcionando). Los que lleguen a AWS verán errores. Los que lleguen a Azure verán el servicio funcionando. Es un período incómodo pero inevitable.</p>
+<hr/>
+<h2 id="conclusion-2-minutos">Conclusión (2 minutos)</h2>
+<p>Lo que hemos construido aquí es más que un simple sistema de backup. Es una arquitectura completa de disaster recovery que balancea tres objetivos críticos: disponibilidad, costo y complejidad operacional.</p>
+<p>Nuestro RTO de 20 minutos está compuesto de 6 minutos de detección, 2 minutos de decisión, 15 minutos de deployment automatizado, y unos minutos finales de validación. Este timeline es realista y alcanzable porque hemos automatizado cada paso que es automatizable y hemos practicado los pasos manuales hasta que son segunda naturaleza.</p>
+<p>Nuestro RPO de menos de 1 segundo es posible gracias a la replicación continua de MySQL a través del túnel VPN cifrado. En el peor caso de un failover, perdemos solo las transacciones que estaban en vuelo en el momento exacto de la caída.</p>
+<p>El costo de mantener esta capacidad es de aproximadamente 125 dólares mensuales: 100 dólares en AWS para la operación normal, y 25 dólares en Azure solo para la réplica de base de datos. Cuando ocurre un failover, el costo de Azure sube a 100 dólares por los recursos adicionales, pero AWS baja a cero, manteniendo el costo total controlado.</p>
+<p>La lección técnica más importante que quiero dejar es esta: el disaster recovery efectivo no es solo sobre tener backups. Es sobre tener un proceso completo, probado y automatizado para convertir esos backups en sistemas funcionando bajo presión. Es sobre tomar decisiones arquitectónicas deliberadas como la réplica cost-optimized, implementar capas de monitoreo redundantes, y sobre todo, documentar y practicar el proceso hasta que el equipo pueda ejecutarlo casi instintivamente en medio de una crisis.</p>
+<p>Gracias por su atención. Estoy disponible para preguntas.</p>
+<hr/>
+<p><em>Este guión está diseñado para una presentación de 20-25 minutos. Ajuste el ritmo según el tiempo disponible y el nivel técnico de la audiencia.</em></p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 22, 2025 11:23:08 UTC">December 22, 2025</span>
+</span>
+<span class="md-source-file__fact">
+<span class="md-icon" title="Created">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 22, 2025 11:23:08 UTC">December 22, 2025</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2025 Andrea - DEMO3 Presentation
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
+</body>
+</html>
